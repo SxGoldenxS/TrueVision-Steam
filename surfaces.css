@@ -93,4 +93,51 @@
 :root:root body.DesktopUI .DownloadsPage{background:linear-gradient(rgba(var(--truevision-panel-rgb),.5),rgba(var(--truevision-panel-rgb),.7))!important;color:var(--raphael-ivory)}
 :root:root body.DesktopUI .DownloadsPage :is(.SectionTitle,.DownloadItemName){color:var(--raphael-ivory)!important}
 :root:root body.DesktopUI .Library :is(.MenuHeader,._20QAC4WMXm8qFE8waUT5oo){background:var(--raphael-etch) left top / 224px 160px repeat,var(--truevision-panel-deep)!important}
+/* Shared controls outside Library: properties, install prompts, controller
+   configuration, storage and notification settings all use these native roles. */
+:root:root body.DesktopUI .DialogButton.Primary:not(.Danger):not(.Destructive):not(.Green){background:var(--raphael-gold)!important;color:var(--raphael-ink)!important;border:1px solid var(--raphael-gold)!important;border-radius:1px!important}
+:root:root body.DesktopUI .Toggle:not(.On) .ToggleRail{background:var(--truevision-panel-cool)!important;border:1px solid var(--raphael-edge)!important}
+:root:root body.DesktopUI :is(.DialogButton,.DialogDropDown,.BasicTextInput):is(:disabled,[aria-disabled="true"],.Disabled){color:var(--raphael-muted)!important}
+:root:root body.DesktopUI :is(.ContentManagement .InstallFolder,.ContentManagement .AppHeaderContainer,.ContentManagement .AppActionBar,
+ .PagedSettingsDialog .NotificationSection,.PagedSettingsDialog .NotificationGroup,.ControllerConfiguratorSummary .ControlsListSection,
+ .NotificationsMenu,.NotificationsMenu .NotificationHeader,.NotificationsMenu .NotificationMenuItem,.NotificationsMenu .StandardTemplateContainer){
+ background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;border-radius:1px!important;color:var(--raphael-ivory)!important;
+}
+:root:root body.DesktopUI .ContentManagement :is(.AppBody,.DriveDropdownControl,.DropdownOptionCtn){background:var(--truevision-panel-deep)!important;border-color:var(--raphael-edge)!important}
+:root:root body.DesktopUI .ContentManagement .AppSelected{background:rgba(var(--truevision-accent-rgb),.18)!important;box-shadow:inset 3px 0 var(--raphael-gold)!important}
+:root:root body.DesktopUI .ContentManagement :is(.DriveName,.AppName,.AppHeader){color:var(--raphael-ivory)!important}
+:root:root body.DesktopUI .ContentManagement :is(.AppUsageLink,.DriveSettingsButton){color:var(--raphael-gold)!important}
+:root:root body.DesktopUI .NotificationsMenu :is(.Unread,.NotificationMenuItem):hover{background:rgba(var(--truevision-accent-rgb),.14)!important}
+/* Friends and Chat have their own document and opaque inner containers.
+   Presence names, avatars, message media and voice/error indicators stay native. */
+:root:root body.friendsui-container :is(.friendlist,.friendlistListContainer,.FriendsListContainer,.FriendsListContent,
+ .chatWindow,.chatDialogs,.chatHistory,.chatHistoryScroll,.chatHistoryAndMembers,.ChatRoomGroup_WindowContent,.ChatRoomGroupDialog_history,.VoiceRoomChatWindow){
+ background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;border-radius:1px!important;color:var(--raphael-ivory)!important;
+}
+:root:root body.friendsui-container :is(.titleBarContainer,.friendsListSectionTitle,.groupChatSectionTitle,.friendListFooter,
+ .chatHeader,.chatTitleBar,.chatRoomHeader,.chatRoomGroupHeader,.chatRoomListContainer,.ChatRoomList,.chatTabList,.InnerChatTabs){
+ background:var(--raphael-etch) left top / 224px 160px repeat,var(--truevision-panel-cool)!important;border-color:var(--raphael-edge)!important;color:var(--raphael-ivory)!important;
+}
+:root:root body.friendsui-container :is(.chatHeaderGradient,.listContentContainer){background:transparent!important}
+:root:root body.friendsui-container :is(.chatEntry,.friendSearchInput,.DialogTextInputBase,.DialogDropDown){background:var(--truevision-panel-deep)!important;border-color:var(--raphael-edge)!important;color:var(--raphael-ivory)!important;border-radius:1px!important}
+:root:root body.friendsui-container :is(.friendlistListContainer .friend,.chatRoomListItem,.chatTabSelector):hover{background:rgba(var(--truevision-accent-rgb),.12)!important}
+:root:root body.friendsui-container :is(.chatTabSelector,.InnerChatTab):is(.Active,.Selected,[aria-selected="true"]){background:rgba(var(--truevision-accent-rgb),.2)!important;box-shadow:inset 0 -2px var(--raphael-gold)!important}
+:root:root body.friendsui-container :is(.contextMenuContents,.DialogContent,.ModalPosition_Content){background:var(--truevision-panel-surface)!important;border:1px solid var(--raphael-edge)!important;color:var(--raphael-ivory)!important;border-radius:1px!important}
+:root:root body.friendsui-container :is(.contextMenuItem,.friendListButton,.chatRoomButton){color:var(--truevision-text-secondary)!important;border-radius:1px!important}
+:root:root body.friendsui-container :is(.contextMenuItem,.friendListButton,.chatRoomButton):is(:hover,.Focused){background:rgba(var(--truevision-accent-rgb),.14)!important;color:var(--truevision-bright)!important}
+:root:root body.friendsui-container :is(input,textarea,button,[contenteditable="true"],[tabindex]):focus-visible{outline:2px solid var(--raphael-teal)!important;outline-offset:2px}
+/* Preserve the game's view behind the overlay; texture only actual UI panes. */
+:root:root body.DesktopUI.OverlayPopupBody{background:transparent!important}
+:root:root body.DesktopUI :is(.OverlayPopup,.GameOverviewSection,.OverlayAchievements,.OverlayBroadcastChat){background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;color:var(--raphael-ivory)!important;border-radius:1px!important}
+:root:root body.DesktopUI .OverlayPopup :is(.GameOverviewSectionHeader,.SettingsTitleBar){background:var(--truevision-panel-cool)!important;border-bottom:1px solid var(--raphael-edge)!important}
+/* Big Picture uses Gamepad roots. Keep native controller geometry/focus and
+   media, rather than importing the desktop rail into a controller interface. */
+:root:root body:is(.GamepadUI,.GamepadUIPopupWindowBody){background:var(--raphael-ink) var(--raphael-scene) center / cover no-repeat!important;color:var(--raphael-ivory)!important}
+:root:root body:is(.GamepadUI,.GamepadUIPopupWindowBody) :is(.BasicHome,.GamepadLibrary){background:transparent!important}
+:root:root body:is(.GamepadUI,.GamepadUIPopupWindowBody) :is(.QuickAccessMenu,.MainMenuEmbedded,.DashboardMenu,.GamepadDialogOverlay .DialogContent,.PagedSettingsDialog,.PanelSection,.DialogContent){
+ background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;color:var(--raphael-ivory)!important;
+}
+:root:root body:is(.GamepadUI,.GamepadUIPopupWindowBody) :is(.PanelSectionTitle,.CollectionHeader){color:var(--raphael-gold)!important}
+:root:root body:is(.GamepadUI,.GamepadUIPopupWindowBody) :is(.PanelSectionRow,.PagedSettingsDialog_PageListItem){background:var(--truevision-panel-deep)!important;color:var(--truevision-text-secondary)!important}
+:root:root body:is(.GamepadUI,.GamepadUIPopupWindowBody) :is(.gpfocus,.GamepadFocus){outline:2px solid var(--raphael-teal)!important;outline-offset:2px!important}
 @media(prefers-reduced-motion:reduce){:root:root body.DesktopUI .BottomBar :is(.AddGameButton,.DownloadStatusContent,.FriendsButton){transition:none!important}}

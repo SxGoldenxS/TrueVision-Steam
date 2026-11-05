@@ -25,7 +25,7 @@
   .tab_content, .tab_preview_container, .store_capsule .discount_block,
   .game_area_purchase_game, .game_area_offsite_purchase, .game_area_dlc_section,
   .game_details, .game_area_details_specs, .review_box, .search_result_row,
-  .search_collapse_block, .search_rightcol .block, .popup_block_new .popup_body) {
+  .search_collapse_block, .search_rightcol .block, .search_filter_suggest, .popup_block_new .popup_body) {
   background: var(--raphael-etch) left top / 224px 180px repeat,
     linear-gradient(120deg, var(--truevision-panel-cool), var(--truevision-panel-mid) 65%, var(--truevision-panel-warm)) !important;
   border-color: var(--raphael-edge) !important;

@@ -1,0 +1,56 @@
+/* Steam's current SSR/React components declare palette roles on nested
+   providers. Override those providers, not only inherited :root variables.
+   Green purchase/success and red warning providers retain their native roles. */
+:root:root [data-react-nav-root] [data-dull-color="greyneutral"] {
+ --color-dull-1:var(--raphael-ink)!important;
+ --color-dull-2:var(--truevision-panel-deep)!important;
+ --color-dull-3:var(--truevision-panel-mid)!important;
+ --color-dull-4:var(--truevision-panel-cool)!important;
+ --color-dull-5:var(--truevision-panel-warm)!important;
+ --color-dull-6:var(--raphael-edge)!important;
+ --color-dull-7:rgba(var(--truevision-accent-rgb),.32)!important;
+ --color-dull-8:var(--raphael-muted)!important;
+ --color-dull-9:var(--raphael-muted)!important;
+ --color-dull-10:var(--truevision-text-secondary)!important;
+ --color-dull-11:var(--raphael-ivory)!important;
+ --color-dull-12:var(--truevision-bright)!important;
+}
+:root:root [data-react-nav-root] [data-body-text-color="text-light"]{
+ --color-text-body-title:var(--truevision-bright)!important;
+ --color-text-body-subtitle:var(--raphael-ivory)!important;
+ --color-text-body-body:var(--raphael-ivory)!important;
+ --color-text-body-description:var(--truevision-text-secondary)!important;
+ --color-text-body-note:var(--raphael-muted)!important;
+}
+:root:root [data-react-nav-root] :is(header,footer,dialog,[role="dialog"],[role="menu"],[role="listbox"]){
+ background:var(--truevision-panel-surface)!important;color:var(--raphael-ivory)!important;
+ border-color:var(--raphael-edge)!important;border-radius:1px!important;
+}
+:root:root [data-react-nav-root] :is([role="tablist"],nav){background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important}
+:root:root [data-react-nav-root] :is([role="tab"],[role="menuitem"],[role="option"]):is([aria-selected="true"],[aria-current="page"],:hover){
+ background:rgba(var(--truevision-accent-rgb),.16)!important;color:var(--truevision-bright)!important;box-shadow:inset 0 -2px var(--raphael-gold)!important;
+}
+:root:root [data-react-nav-root] :is(input[type="text"],input[type="search"],textarea,select){background:var(--truevision-panel-deep)!important;border-color:var(--raphael-edge)!important;color:var(--raphael-ivory)!important}
+:root:root [data-react-nav-root] :is(a,button,input,textarea,select,[tabindex]):focus-visible{outline:2px solid var(--raphael-teal)!important;outline-offset:2px!important}
+/* CommunityTemplate background layer, Workshop shelf/intro and hub navigation.
+   These module IDs were traced to JNb_b3YH, Cykx_Gqn, DaTFOtWq and Dpn736QM
+   in Steam's 2026-11-05 public SSR build. Restrict them to their page root. */
+:root:root [data-react-nav-root="CommunityTemplate"] .t-LlQicBZjE-,
+:root:root [data-react-nav-root="CommunityTemplate"] .t-LlQicBZjE-::before,
+:root:root [data-react-nav-root="CommunityTemplate"] .t-LlQicBZjE-::after{background:transparent!important}
+:root:root [data-react-nav-root="CommunityTemplate"] :is(.OCw7CSOMK40-,._0rX4KuKZ9dM-,.eDVdMzW4Ol4-){
+ background:var(--truevision-panel-surface)!important;border:1px solid var(--raphael-edge)!important;border-radius:1px!important;
+}
+/* Match the card's artwork wrapper structurally. Images, their dimensions,
+   preview controls, links and the game's promotional banner remain native. */
+:root:root [data-react-nav-root="CommunityTemplate"] .Panel:has(>.aspectratio_square){
+ background:var(--truevision-panel-surface)!important;border:1px solid var(--raphael-edge)!important;border-radius:1px!important;box-shadow:inset 0 1px rgba(var(--truevision-surface-highlight-rgb),.04)!important;
+}
+:root:root [data-react-nav-root="CommunityTemplate"] .Panel:has(>.aspectratio_square) .SVGIcon_Star_Filled{color:var(--raphael-gold)!important}
+/* Current StoreTemplate cart panels use hard-coded neutral/blue gradients in
+   addition to the palette providers. Leave checkout actions and price/status
+   text to the native green/red providers. */
+:root:root body:has([data-react-nav-root="StoreTemplate"]){--store-body-background:transparent!important}
+:root:root [data-react-nav-root="StoreTemplate"] :is(.i1XZFikuzME-,.nfxC9n3FRVE-,.WCG-2-OYepA-,.SdFPqnbn0yI-){
+ background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;border-radius:1px!important;
+}

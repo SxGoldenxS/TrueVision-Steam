@@ -37,8 +37,7 @@
    SystemAccentColor. Fill those slots from the selected profile, while leaving
    red/error and green/friend-presence palettes with their native meanings. */
 :root:root,
-body.DesktopUI [data-accent-color="blue"],
-body.friendsui-container [data-accent-color="blue"] {
+:root:root [data-accent-color="blue"] {
   --color-accent-1: var(--raphael-ink) !important;
   --color-accent-2: var(--truevision-panel-deep) !important;
   --color-accent-3: rgba(var(--truevision-accent-rgb), .10) !important;
@@ -51,6 +50,7 @@ body.friendsui-container [data-accent-color="blue"] {
   --color-accent-10: var(--SystemAccentColorLight1) !important;
   --color-accent-11: var(--truevision-selected) !important;
   --color-accent-12: var(--truevision-bright) !important;
+  --color-accent-contrast: var(--raphael-ink) !important;
   --color-progress-bar-foreground: var(--raphael-gold) !important;
 }
 body.DesktopUI .ProgressBar {

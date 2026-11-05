@@ -5,6 +5,8 @@ For issues or fixes, message **daddysxgold** on Discord.
 
 Choose Raphael / Ciel, Great Sage, Luminous / Asmodeus or Veldora / Lord of Storms in **TrueVision > Configuration > TrueVision > Skill profile**. Library Home, Collections and Downloads live in the side rail; global Store/Library/Community navigation stays at the top. The duplicate Home/Collections strip is hidden. The tactical rail, squared panels, segmented navigation and game-list status icons are shared across all four profiles. Each profile has its own palette, artwork and panel texture across the Library, Store, Community, Steam Settings, Millennium Settings and bottom bar. Installed games remain brighter and heavier than uninstalled games; a filled dot marks installed games and a hollow dot marks uninstalled games. **What's New shelf** is hidden by default; set it to **Shown** in the same configuration tab to restore it. Background options are Still, Animated and Plain; animation follows window activity and reduced-motion preferences.
 
+Version 2.1 also covers storage and controller panels, Friends/Chat interiors, notification menus, overlays, Big Picture panes, and the newer React Workshop/Store components. The modern web palette is applied at Steam's nested color providers so those pages follow each profile instead of restoring default blue/gray controls. Workshop artwork and native media remain intact.
+
 ## Install
 
 1. Install [Millennium](https://steambrew.app/). TrueVision 2.0 needs no other theme.

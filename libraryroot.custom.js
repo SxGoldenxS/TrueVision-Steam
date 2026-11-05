@@ -32,12 +32,11 @@
 (() => {
  window.__truevisionTactical?.dispose();
  let rail;
- const icons={library:'M4 4h6v16H4zM14 4h6v16h-6z',collections:'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',downloads:'M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4',store:'M3 5h2l2 11h11l3-8H6M9 20h.01M17 20h.01'};
- const actions=[['library','Library'],['collections','Collections'],['downloads','Downloads'],['store','Store']];
+ const icons={library:'M4 4h6v16H4zM14 4h6v16h-6z',collections:'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',downloads:'M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4'};
+ const actions=[['library','Library home'],['collections','Collections'],['downloads','Downloads']];
  const navigate=action=>{
   const owner=window.opener?.SteamUIStore?window.opener:window;
-  if(action==='store')owner.MainWindowBrowserManager?.ActivateTab('store');
-  else owner.SteamUIStore?.Navigate({library:'/library/home',collections:'/library/collections',downloads:'/downloads'}[action]);
+  owner.SteamUIStore?.Navigate({library:'/library/home',collections:'/library/collections',downloads:'/downloads'}[action]);
  };
  const mount=()=>{
   if(rail?.isConnected)return;

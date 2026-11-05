@@ -37,7 +37,7 @@
 :root:root body.DesktopUI .Library ._3x1HklzyDs4TEjACrRO2tB{
  background:var(--truevision-panel-surface)!important;border-inline-end:1px solid var(--raphael-edge);box-shadow:none!important;
 }
-:root:root body.DesktopUI .Library .GameListHomeAndSearch{background:var(--truevision-panel-deep);border-bottom:1px solid var(--raphael-edge)}
+:root:root body.DesktopUI .Library .GameListHomeAndSearch{display:none!important}
 :root:root body.DesktopUI .Library .LibraryWindowDivider{background:var(--raphael-edge);width:1px}
 /* Never change the row height: Steam positions these rows virtually. The
    status column fits inside that native geometry rather than adding a line. */

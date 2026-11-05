@@ -2,6 +2,38 @@
 param([string]$SteamPath, [switch]$Force)
 $ErrorActionPreference='Stop'
 $temporary=$null
+function Request-SteamUIReload {
+ param([string]$SteamExecutable)
+ # Millennium exposes Steam's local Chromium debugger. Only target its shared
+ # UI context on loopback; never stop/start Steam or touch a running game.
+ $socket=$null;$deadline=$null;$message=$null
+ try {
+  $running=@(Get-Process -Name steam -ErrorAction SilentlyContinue|Where-Object {$_.Path -eq $SteamExecutable})
+  if(-not $running.Count){return $false}
+  $targets=Invoke-RestMethod -Uri 'http://127.0.0.1:8080/json/list' -TimeoutSec 3
+  $target=$targets|Where-Object {$_.title -eq 'SharedJSContext' -and $_.url -match '^https://steamloopback\.host/'}|Select-Object -First 1
+  if(-not $target){return $false}
+  $uri=[uri]$target.webSocketDebuggerUrl
+  if($uri.Scheme -ne 'ws' -or $uri.Host -ne '127.0.0.1' -or $uri.Port -ne 8080){return $false}
+  $socket=[Net.WebSockets.ClientWebSocket]::new()
+  $deadline=[Threading.CancellationTokenSource]::new(5000)
+  $null=$socket.ConnectAsync($uri,$deadline.Token).GetAwaiter().GetResult()
+  $expression='(()=>{if(typeof globalThis.SteamClient?.Browser?.RestartJSContext!=="function")return false;setTimeout(()=>SteamClient.Browser.RestartJSContext(),250);return true})()'
+  $request=@{id=1;method='Runtime.evaluate';params=@{expression=$expression;returnByValue=$true}}|ConvertTo-Json -Depth 5 -Compress
+  $payload=[Text.Encoding]::UTF8.GetBytes($request)
+  $null=$socket.SendAsync([ArraySegment[byte]]::new($payload),[Net.WebSockets.WebSocketMessageType]::Text,$true,$deadline.Token).GetAwaiter().GetResult()
+  $buffer=New-Object byte[] 4096
+  $message=[IO.MemoryStream]::new()
+  do{
+   $received=$socket.ReceiveAsync([ArraySegment[byte]]::new($buffer),$deadline.Token).GetAwaiter().GetResult()
+   $message.Write($buffer,0,$received.Count)
+   if($message.Length -gt 16384){return $false}
+  }while(-not $received.EndOfMessage)
+  $response=[Text.Encoding]::UTF8.GetString($message.ToArray())|ConvertFrom-Json
+  return $response.id -eq 1 -and $response.result.result.value -eq $true
+ }catch{return $false}
+ finally{if($message){$message.Dispose()};if($socket){$socket.Dispose()};if($deadline){$deadline.Dispose()}}
+}
 try {
  if(-not $SteamPath){
   $SteamPath=(Get-ItemProperty 'HKCU:\Software\Valve\Steam' -ErrorAction SilentlyContinue).SteamPath
@@ -60,18 +92,9 @@ try {
  if(-not $?){throw 'Theme installation failed.'}
  $verified=Get-Content -LiteralPath (Join-Path $installed 'metadata.json') -Raw|ConvertFrom-Json
  if($verified.commit -ne $commit){throw 'Installed commit verification failed.'}
- Write-Output "Updated TrueVision to $($skin.version). Restarting Steam..."
- # Use Steam's normal shutdown so games and pending dialogs can delay or
- # cancel it. Never force-kill Steam, its helpers or running games.
- $runningSteam=@(Get-Process -Name steam -ErrorAction SilentlyContinue|Where-Object {$_.Path -eq $steamExe})
- if($runningSteam.Count){
-  Start-Process -FilePath $steamExe -ArgumentList '-shutdown' -WindowStyle Hidden
-  foreach($process in $runningSteam){
-   if(-not $process.WaitForExit(60000)){throw 'The theme was updated, but Steam did not close within 60 seconds. Close any game or shutdown prompt, then fully restart Steam.'}
-  }
- }
- Start-Process -FilePath $steamExe
- Write-Output 'Steam started with the updated theme.'
+ Write-Output "Updated TrueVision to $($skin.version). Reloading Steam's UI..."
+ if(Request-SteamUIReload -SteamExecutable $steamExe){Write-Output 'Steam UI reload scheduled. Steam and running games stay open.'}
+ else{Write-Warning 'The update is installed. Use Easy Restart / Reload > Reload UI to apply it; automatic UI reload was unavailable. Steam has not been restarted.'}
 } catch { Write-Error $_; exit 1 }
 finally {
  if($temporary -and (Test-Path -LiteralPath $temporary)){

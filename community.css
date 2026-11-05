@@ -1,0 +1,60 @@
+/* Steam Community is a separate web document. Cover its native page families
+   with the selected profile; retain avatars, game images, media and controls. */
+:root:root body{
+ background:linear-gradient(rgba(var(--truevision-panel-rgb),.76),rgba(var(--truevision-panel-rgb),.88)) fixed,
+  var(--raphael-ink) var(--raphael-scene) center top / cover fixed no-repeat!important;
+ color:var(--raphael-ivory)!important;
+}
+:root:root body :is(.responsive_page_content,.responsive_page_template_content,.profile_page,.profile_background_holder,.profile_content,.apphub_background,.apphub_background_holder,.grouppage_content_area,.market_page_full){background:transparent!important}
+:root:root body :is(#global_header,#global_header>.content,#footer,.apphub_HeaderTop,.profile_header_bg,.group_header,.workshop_header,.market_header_bg){
+ background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;border-radius:1px!important;
+}
+:root:root body :is(.apphub_Card,.apphub_CardContentMain,.apphub_CardContentAuthorBlock,.apphub_SectionFilter,
+ .apphub_sectionTabs,.apphub_MostPopularLink,.apphub_Stats,.apphub_UpcomingEvents,
+ .profile_rightcol,.profile_customization,.profile_customization_header,.profile_leftcol_header,.profile_header_badge,.recent_game,
+ .commentthread_area,.commentthread_header,.commentthread_comment,.commentthread_entry,.commentthread_footer,
+ .forum_topic,.forum_op,.forum_paging,.forum_topic_overlay,.forumtopic_comments,.forumtopic_comments_op,.discussion_search,
+ .blotter_day,.blotter_author_block,.blotter_group_announcement_header,.blotter_comment_thread,
+ .group_content,.group_content_top,.group_summary,.grouppage_sidebar,.grouppage_maincontent,.group_content_rule,
+ .workshopItem,.workshopItemCollection,.workshopItemDetails,.workshop_item_header,.workshop_browse_paging,.workshopTags,.workshopItemDescription,
+ .inventory_page_left,.inventory_page_right,.inventory_header,.inventory_ctn,.item_desc_content,.tradeoffer,.tradeoffer_items,
+ .market_listing_row,.market_listing_table_header,.market_page_right,.market_listing_filter,.market_listing_item_desc,
+ .gameListRow,.friendBlock){
+ background:var(--truevision-panel-surface)!important;color:var(--raphael-ivory)!important;
+ border:1px solid var(--raphael-edge)!important;border-radius:1px!important;
+ box-shadow:inset 0 1px rgba(var(--truevision-surface-highlight-rgb),.035)!important;
+}
+:root:root body :is(.profile_customization_header,.profile_leftcol_header,.group_content_top,.workshop_item_header,.market_listing_table_header){border-bottom-color:var(--raphael-gold)!important;color:var(--raphael-ivory)!important}
+:root:root body a:not(.btn_green_white_innerfade):not(.btn_green_steamui){color:var(--raphael-gold)}
+:root:root body :is(.forum_topic_name,.forum_topic_name a,.apphub_CardContentTitle,.profile_header .persona_name,.workshopItemTitle,.market_listing_item_name,.grouppage_header_name){color:var(--truevision-bright)!important}
+:root:root body :is(.commentthread_comment_text,.forum_topic_details,.forumtopic_comments_op .content,.profile_summary,.workshopItemDescription,.apphub_CardTextContent){color:var(--truevision-text-secondary)!important}
+:root:root body :is(.apphub_sectionTab,.workshopTab,.profile_tab,.group_tab){background:var(--truevision-panel-deep)!important;border-color:var(--raphael-edge)!important;border-radius:1px!important;color:var(--truevision-text-secondary)!important}
+:root:root body :is(.apphub_sectionTab.active,.apphub_sectionTab.active a,.workshopTab.active,.profile_tab.active,.group_tab.active){background:rgba(var(--truevision-accent-rgb),.2)!important;color:var(--truevision-bright)!important;box-shadow:inset 0 -2px var(--raphael-gold)!important}
+:root:root body :is(input[type="text"],input[type="search"],textarea,.commentthread_textarea,.forum_searchbox){background:var(--truevision-panel-deep)!important;color:var(--raphael-ivory)!important;border-color:var(--raphael-edge)!important;border-radius:1px!important}
+:root:root body :is(.btn_grey_black,.btn_grey_grey,.btnv6_blue_hoverfade,.btnv6_blue_blue_innerfade,.btn_profile_action){background:var(--truevision-panel-cool)!important;color:var(--raphael-ivory)!important;border:1px solid var(--raphael-edge)!important;border-radius:1px!important}
+:root:root body :is(.btn_grey_black,.btn_grey_grey,.btnv6_blue_hoverfade,.btnv6_blue_blue_innerfade,.btn_profile_action)>span{background:transparent!important;color:inherit!important}
+/* Community home paints these wrappers, tab spans and button spans separately.
+   Override all painting layers, leaving search submit images and game art. */
+:root:root body :is(.community_home_header_bg,.community_home_app_shortcuts,.community_home_search_box,.community_home_shortcut_content){
+ background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;
+}
+:root:root body :is(.community_home_app_shortcuts,.community_home_search_box){border:1px solid var(--raphael-edge)!important;border-radius:1px!important}
+:root:root body :is(.community_home_search_apps,.community_home_search_players,.apphub_SearchText,.apphub_Search,.workshopSearchContainer){
+ background:var(--truevision-panel-deep)!important;border:1px solid var(--raphael-edge)!important;border-radius:1px!important;box-shadow:none!important;
+}
+:root:root body :is(.community_home_search_apps,.community_home_search_players):focus-within{border-color:var(--raphael-gold)!important}
+:root:root body :is(.community_home_title,.apphub_HomeHeader,.apphub_AppName){color:var(--truevision-bright)!important}
+:root:root body :is(.community_home_subtitle,.community_home_search_title,.community_home_app_shortcuts_list_header,.new_items_text,.apphub_NumInGame,.apphub_Stats .label){color:var(--truevision-text-secondary)!important}
+:root:root body :is(.new_items_num,.apphub_NumInGame .number,.community_home_sort_buttons,.appHubShortcut_Title){color:var(--raphael-gold)!important}
+:root:root body :is(.community_home_search_divider,.apphub_SectionFilterLabel){border-color:var(--raphael-edge)!important}
+:root:root body .apphub_sectionTab>span{background:transparent!important;color:inherit!important;box-shadow:none!important}
+:root:root body .apphub_sectionTab:hover{background:rgba(var(--truevision-accent-rgb),.12)!important;color:var(--truevision-bright)!important}
+:root:root body :is(.btn_darkblue_white_innerfade,.btn_grey_grey_outer_bevel,.btn_grey_white_innerfade){
+ background:var(--truevision-panel-cool)!important;color:var(--raphael-ivory)!important;border:1px solid var(--raphael-edge)!important;border-radius:1px!important;box-shadow:none!important;
+}
+:root:root body :is(.btn_darkblue_white_innerfade,.btn_grey_grey_outer_bevel,.btn_grey_white_innerfade)>span{background:transparent!important;color:inherit!important;border-radius:0!important;box-shadow:none!important}
+:root:root body .community_home_sort_buttons .btn_darkblue_white_innerfade{background:rgba(var(--truevision-accent-rgb),.2)!important;color:var(--truevision-bright)!important;box-shadow:inset 0 -2px var(--raphael-gold)!important}
+:root:root body :is(.community_home_search_apps,.community_home_search_players) input[type="text"]{box-shadow:none!important}
+:root:root body :is(.responsive_tab_control,.responsive_tab_control_inner,.responsive_tab_select){background:var(--truevision-panel-cool)!important;color:var(--raphael-ivory)!important;border-color:var(--raphael-edge)!important}
+:root:root body :is(a,button,input,textarea,select,[tabindex]):focus-visible{outline:2px solid var(--raphael-teal)!important;outline-offset:2px!important}
+@media(prefers-reduced-motion:reduce){:root:root body{background-attachment:scroll!important}}

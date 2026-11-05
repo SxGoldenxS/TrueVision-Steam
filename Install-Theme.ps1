@@ -40,7 +40,7 @@ try {
   if($backup){Write-Output "Previous copy backed up: $backup"}
   Write-Output "Installed TrueVision $($skin.version), by Golden."
   Write-Output 'Active theme and saved settings were preserved. Discord support: daddysxgold'
-  Write-Output 'Select TrueVision in Millennium if needed, then fully exit and reopen Steam.'
+  Write-Output 'Select TrueVision in Millennium if needed, then use Easy Restart / Reload > Reload UI.'
   Write-Output 'Future updates: double-click UPDATE.cmd. No background service is installed.'
  } finally {
   if($stage -and (Test-Path -LiteralPath $stage)){

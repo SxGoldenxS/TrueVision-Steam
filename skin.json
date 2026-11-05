@@ -1,7 +1,7 @@
 {
   "name": "TrueVision",
   "author": "Golden",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "github": {
     "owner": "SxGoldenxS",
     "repo_name": "TrueVision-Steam"
@@ -22,7 +22,7 @@
   "Steam-WebKit": "webkit.css",
   "Patches": [
     {
-      "MatchRegexString": "^Steam$|^OverlayBrowser_Browser$|^SP Overlay:|Supernav$|^notificationtoasts_|^SteamBrowser_Find$|^OverlayTab\\d+_Find$|Menu$|.ModalDialogPopup|.FullModalOverlay",
+      "MatchRegexString": "^Steam$|DesktopUI|SteamUIPopupWindowBody|^Steam Settings$|^Account$|^Settings$|^OverlayBrowser_Browser$|^SP Overlay:|Supernav$|^notificationtoasts_|^SteamBrowser_Find$|^OverlayTab\\d+_Find$|Menu$|.ModalDialogPopup|.FullModalOverlay",
       "TargetCss": "libraryroot.custom.css",
       "TargetJs": "libraryroot.custom.js"
     },
@@ -39,6 +39,11 @@
     {
       "MatchRegexString": "^https://store\\.steampowered\\.com(?:/|$)",
       "TargetCss": "store.css",
+      "TargetJs": "activity.js"
+    },
+    {
+      "MatchRegexString": "^https://(?:www\\.)?steamcommunity\\.com(?:/|$)",
+      "TargetCss": "community.css",
       "TargetJs": "activity.js"
     }
   ],

@@ -1,0 +1,96 @@
+/* Shared native Steam surfaces. Semantic classes are read from Steam's own
+   class exports; these rules do not depend on Minimal Dark or English labels. */
+:root:root body.DesktopUI:has(.PagedSettingsDialog){background:var(--truevision-panel-surface)!important}
+:root:root body.DesktopUI :is(.PagedSettingsDialog,.SettingsModal,.SettingsModalRoot,.DesktopPopup){
+ background:var(--truevision-panel-surface)!important;color:var(--raphael-ivory)!important;
+ border-color:var(--raphael-edge)!important;
+}
+:root:root body.DesktopUI :is(.PagedSettingsDialog_PageListColumn,.PageListColumn){
+ background:var(--raphael-etch) left top / 224px 160px repeat,linear-gradient(180deg,var(--truevision-panel-cool),var(--truevision-panel-deep))!important;
+ border-inline-end:1px solid var(--raphael-edge)!important;
+}
+:root:root body.DesktopUI :is(.PagedSettingDialog_ContentColumn,.PagedSettingsDialog_PageContent,.SettingsDialogBodyFade){
+ background:var(--raphael-etch) left top / 224px 160px repeat,linear-gradient(120deg,var(--truevision-panel-mid),var(--truevision-panel-deep))!important;
+ color:var(--raphael-ivory)!important;
+}
+:root:root body.DesktopUI :is(.PagedSettingsDialog_PageList,.DialogBody){background:transparent!important}
+:root:root body.DesktopUI :is(.PagedSettingsDialog_Title,.SettingsDialogSubHeader,.PanelSectionTitle){color:var(--raphael-gold)!important;letter-spacing:.6px}
+:root:root body.DesktopUI .PagedSettingsDialog_PageListItem{
+ background:transparent!important;color:var(--truevision-text-secondary)!important;
+ border-radius:0!important;box-shadow:inset 0 -1px rgba(var(--truevision-surface-highlight-rgb),.045);
+}
+:root:root body.DesktopUI .PagedSettingsDialog_PageListItem:is(.Active,[aria-selected="true"]){
+ background:rgba(var(--truevision-accent-rgb),.17)!important;color:var(--truevision-bright)!important;
+ box-shadow:inset 3px 0 var(--raphael-gold),inset 0 -1px var(--raphael-edge)!important;
+}
+:root:root body.DesktopUI .PagedSettingsDialog_PageListItem:hover{background:rgba(var(--truevision-accent-rgb),.09)!important}
+/* Settings account actions, setting rows and Millennium's own theme/plugin cards. */
+:root:root body.DesktopUI :is(.PagedSettingsDialog .Field,.PagedSettingsDialog .FatButton,.PagedSettingsDialog .ChangeAccountButton,
+ .MillenniumThemes_ThemeItem,.MillenniumPlugins_PluginItem,.millenniumPluginField,.PanelSectionRow,.SettingsModal .Field){
+ background:var(--truevision-panel-surface)!important;
+ border:1px solid var(--raphael-edge)!important;border-radius:1px!important;
+ color:var(--raphael-ivory)!important;box-shadow:inset 0 1px rgba(var(--truevision-surface-highlight-rgb),.04)!important;
+}
+:root:root body.DesktopUI :is(.FieldLabel,.FieldLabelValue,.PageListItem_Title,.FatButton .Label){color:inherit!important}
+:root:root body.DesktopUI :is(.FieldDescription,.SettingsDialogDescriptionText,.MillenniumThemes_Description,.MillenniumThemes_Author,.FatButton .Details){color:var(--truevision-text-secondary)!important}
+:root:root body.DesktopUI :is(.SettingsLink,.SettingsDialogLink,.MillenniumThemes_Author a,.AccountName){color:var(--raphael-gold)!important}
+:root:root body.DesktopUI :is(.SettingsTitleBar,.MillenniumDesktopSidebar_Title){background:var(--truevision-panel-surface)!important;border-bottom:1px solid var(--raphael-edge)}
+:root:root body.DesktopUI .DialogButton:not(.Primary):not(.Danger):not(.Destructive):not(.Green){
+ background:var(--raphael-etch) left top / 224px 160px repeat,var(--truevision-panel-cool)!important;
+ border:1px solid var(--raphael-edge)!important;color:var(--raphael-ivory)!important;border-radius:1px!important;
+}
+:root:root body.DesktopUI :is(.DialogTextInputBase,.DialogDropDown,.BasicTextInput){background:var(--truevision-panel-deep)!important;color:var(--raphael-ivory)!important;border-color:var(--raphael-edge)!important;border-radius:1px!important}
+:root:root body.DesktopUI :is(.Toggle.On .ToggleRail,.DialogToggleField_Option.Active){background:var(--raphael-gold)!important;border-color:var(--raphael-gold)!important;color:var(--raphael-ink)!important}
+:root:root body.DesktopUI .StandaloneFieldSeparator{background:var(--raphael-edge)!important}
+/* Download settings' informational row and Steam Family tiles do not use
+   Field. Keep their layout, avatars, roles and online/error state colors. */
+:root:root body.DesktopUI .PagedSettingsDialog :is(.FakeContainer,._3Vl2zkYPoCpw1q_1n28D3z,.FamilyMemberRow,._2LyGIHuQ8SFKb5T262YUvg,.AvailableLenderRow){
+ background:var(--truevision-panel-surface)!important;color:var(--raphael-ivory)!important;
+ border:1px solid var(--raphael-edge)!important;border-radius:1px!important;
+ box-shadow:inset 3px 0 rgba(var(--truevision-accent-rgb),.3)!important;
+}
+:root:root body.DesktopUI .PagedSettingsDialog .LastGamePlayed{color:var(--raphael-gold)!important}
+/* Shared_Radio_Group is the native segmented control, including Library size.
+   Use its ARIA state so mouse, keyboard and translated labels stay native. */
+:root:root body.DesktopUI .Shared_Radio_Group{
+ background:var(--truevision-panel-surface)!important;border:1px solid var(--raphael-edge)!important;border-radius:1px!important;
+}
+:root:root body.DesktopUI .Shared_Radio_Group .RadioButton{
+ background:transparent!important;color:var(--truevision-text-secondary)!important;border-radius:0!important;
+ border-color:var(--raphael-edge)!important;box-shadow:none!important;
+}
+:root:root body.DesktopUI .Shared_Radio_Group .RadioButton:is([aria-checked="true"],[aria-selected="true"]){
+ background:rgba(var(--truevision-accent-rgb),.2)!important;color:var(--truevision-bright)!important;
+ box-shadow:inset 0 -2px var(--raphael-gold)!important;
+}
+:root:root body.DesktopUI .Shared_Radio_Group .RadioButton:not([aria-disabled="true"]):hover{background:rgba(var(--truevision-accent-rgb),.12)!important}
+:root:root body.DesktopUI :is(.Shared_Radio_Group,.URLBar) :is(button,[tabindex]):focus-visible{outline:2px solid var(--raphael-teal)!important;outline-offset:-2px}
+/* Native browser chrome lives outside Store/Community web documents. */
+:root:root body.DesktopUI .URLBar{
+ background:var(--truevision-panel-surface)!important;color:var(--truevision-text-secondary)!important;
+ border-bottom:1px solid var(--raphael-edge)!important;box-shadow:inset 0 1px rgba(var(--truevision-surface-highlight-rgb),.035)!important;
+}
+:root:root body.DesktopUI .URLBar :is(.URL,.URLBarText,.URLInput){background:transparent!important;color:var(--truevision-text-secondary)!important}
+:root:root body.DesktopUI .URLBar :is(.ReloadButton,.NavigationButton,.StatusIcon):not(.Disabled):not(.CertError){color:var(--raphael-gold)!important}
+:root:root body.DesktopUI .URLBar :is(.ReloadButton,.NavigationButton):hover{background:rgba(var(--truevision-accent-rgb),.12)!important}
+/* The inner BottomBar paints over BottomBarContainer; both need the surface. */
+:root:root body.DesktopUI :is(.BottomBarContainer,.BottomBar){background:var(--truevision-panel-surface)!important;border-color:var(--raphael-edge)!important;box-shadow:inset 0 1px rgba(var(--truevision-surface-highlight-rgb),.035)!important}
+:root:root body.DesktopUI .BottomBar :is(.AddGameButton,.DownloadStatusContent,.FriendsButton){
+ color:var(--truevision-text-secondary)!important;border-radius:0;transition:background-color 120ms ease,color 120ms ease;
+}
+:root:root body.DesktopUI .BottomBar :is(.AddGameButton,.DownloadStatusContent,.FriendsButton):hover{
+ background:rgba(var(--truevision-accent-rgb),.12)!important;color:var(--raphael-ivory)!important;box-shadow:inset 0 -2px var(--raphael-gold);
+}
+:root:root body.DesktopUI .BottomBar :is(.Icon,.Text,.Queue){color:inherit!important}
+/* Native game sections, collection browsing and downloads share the dashboard
+   frame. Game art, progress graphs and warning colors keep their own meaning. */
+:root:root body.DesktopUI .Library :is(.AppDetailsSection,.AppGameInfoContainer>.Container,.CollectionHeader,.CollectionDetails),
+:root:root body.DesktopUI .Library :is(.CommunityItem,.CommunityItem .TopSectionInner),
+:root:root body.DesktopUI .DownloadsPage :is(.SectionItemContent,.DownloadSectionActiveItem,.RemoteClientManagementRow){
+ background:var(--truevision-panel-surface)!important;border:1px solid var(--raphael-edge)!important;border-radius:1px!important;
+ box-shadow:inset 0 1px rgba(var(--truevision-surface-highlight-rgb),.035)!important;
+}
+:root:root body.DesktopUI .DownloadsPage{background:linear-gradient(rgba(var(--truevision-panel-rgb),.5),rgba(var(--truevision-panel-rgb),.7))!important;color:var(--raphael-ivory)}
+:root:root body.DesktopUI .DownloadsPage :is(.SectionTitle,.DownloadItemName){color:var(--raphael-ivory)!important}
+:root:root body.DesktopUI .Library :is(.MenuHeader,._20QAC4WMXm8qFE8waUT5oo){background:var(--raphael-etch) left top / 224px 160px repeat,var(--truevision-panel-deep)!important}
+@media(prefers-reduced-motion:reduce){:root:root body.DesktopUI .BottomBar :is(.AddGameButton,.DownloadStatusContent,.FriendsButton){transition:none!important}}

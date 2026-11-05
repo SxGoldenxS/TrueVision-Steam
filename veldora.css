@@ -1,5 +1,6 @@
 /* Rimuru's Veldora, Lord of Storms. The field and weather are code-drawn. */
 :root:root:root {
+ --truevision-profile-label: 'VELDORA / LORD OF STORMS';
  --truevision-profile-still: var(--truevision-veldora-still);
  --truevision-profile-animated: var(--truevision-veldora-animated,var(--truevision-veldora-still));
  --raphael-gold:#49c2d0;
@@ -11,28 +12,16 @@
  --raphael-muted:#98afc1;
  --truevision-accent-rgb:73,194,208;
  --truevision-glow-rgb:202,198,132;
- --truevision-panel-cool:#122030;
- --truevision-panel-warm:#151d24;
- --truevision-panel-mid:#101b29;
- --truevision-panel-deep:#0b1420;
+ --truevision-panel-cool: #1b2d37;
+ --truevision-panel-warm: #23302f;
+ --truevision-panel-mid: #18262e;
+ --truevision-panel-deep: #0e1b25;
  --truevision-panel-rgb:9,17,28;
  --truevision-surface-highlight-rgb:220,233,237;
  --truevision-notification-accent:#d3d3a4;
  --truevision-bright:#ecf4f5;
  --truevision-selected:#e7f0d6;
  --truevision-text-secondary:#b6c5ce;
- --minimal_dark_topgrey:#98afc1;
- --minimal_dark_topgrey1:#bfd4dd;
- --minimal_dark_black:#172330;
- --minimal_dark_blacker:#111d29;
- --minimal_dark_blacker_alt:#0f1926;
- --minimal_dark_blacker_alt1:#0c1621;
- --minimal_dark_blacker_alt2:#080e18;
- --minimal_dark_be_grey:#2a3c4a;
- --minimal_dark_greyblack:#2c3c49;
- --minimal_dark_invisiblegrey:rgba(138,190,210,.14);
- --minimal_dark_installed_games:#ecf4f5;
- --minimal_dark_corner:3px;
  --SystemAccentColorLight1:#92dadd !important;
  --SystemAccentColorLight2:#c4e7e0 !important;
  --SystemAccentColorLight3:#ecf4f5 !important;

@@ -1,5 +1,6 @@
 /* TrueVision / pre-evolution Great Sage — ice-blue analytical profile. */
 :root:root:root {
+ --truevision-profile-label: 'GREAT SAGE';
   --truevision-profile-still: var(--truevision-greatsage-still);
   --truevision-profile-animated: var(--truevision-greatsage-animated, var(--truevision-greatsage-still));
   --raphael-gold: #70bcf5;
@@ -9,24 +10,13 @@
   --raphael-ink: #080d17;
   --raphael-edge: rgba(112, 188, 245, .28);
   --raphael-muted: #9db0c8;
-  --minimal_dark_topgrey: #9db0c8;
-  --minimal_dark_topgrey1: #c6dcf4;
-  --minimal_dark_be_grey: #2a3a50;
-  --minimal_dark_greyblack: #2a374a;
-  --minimal_dark_black: #141c29;
-  --minimal_dark_blacker: #101724;
-  --minimal_dark_blacker_alt: #0c1320;
-  --minimal_dark_blacker_alt1: #0a111d;
-  --minimal_dark_blacker_alt2: #080d17;
-  --minimal_dark_invisiblegrey: rgba(112, 188, 245, .14);
-  --minimal_dark_installed_games: #dcedff;
   --truevision-text-secondary: #b9cde2;
   --truevision-accent-rgb: 112, 188, 245;
   --truevision-glow-rgb: 112, 188, 245;
-  --truevision-panel-cool: #102035;
-  --truevision-panel-warm: #131b2c;
-  --truevision-panel-mid: #11151a;
-  --truevision-panel-deep: #0d131a;
+  --truevision-panel-cool: #172b40;
+  --truevision-panel-warm: #182b3b;
+  --truevision-panel-mid: #142230;
+  --truevision-panel-deep: #0d1a29;
   --truevision-panel-rgb: 8, 12, 18;
   --truevision-surface-highlight-rgb: 220, 249, 255;
   --truevision-notification-accent: var(--raphael-teal);
@@ -38,7 +28,6 @@
   --SystemAccentColorDark1: #438dcc !important;
   --SystemAccentColorDark2: #28557f !important;
   --SystemAccentColorDark3: #172b45 !important;
-  --minimal_dark_corner: 4px;
 }
 /* Keep the spatial manifestation visible, with an opaque reading surface only
    behind content. No extra backdrop blur or independently animated panels. */

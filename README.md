@@ -1,13 +1,13 @@
 # TrueVision for Steam
 
-Tensura skill themes for Millennium, created by **Golden**.
+A standalone tactical Steam interface with four Tensura skill profiles, created by **Golden**.
 For issues or fixes, message **daddysxgold** on Discord.
 
-Choose Raphael / Ciel, Great Sage, Luminous / Asmodeus or Veldora / Lord of Storms in **TrueVision > Configuration > TrueVision > Skill profile**. Each profile has its own palette, artwork and panel texture across the Library and Store. Installed games remain brighter and heavier than uninstalled games. Background options are Still, Animated and Plain; animation follows window activity and reduced-motion preferences.
+Choose Raphael / Ciel, Great Sage, Luminous / Asmodeus or Veldora / Lord of Storms in **TrueVision > Configuration > TrueVision > Skill profile**. The tactical rail, squared panels, segmented navigation and game-list status column are shared across all four profiles. Each profile has its own palette, artwork and panel texture across the Library and Store. Installed games remain brighter and heavier than uninstalled games; both have an explicit installation-status column. Background options are Still, Animated and Plain; animation follows window activity and reduced-motion preferences.
 
 ## Install
 
-1. Install [Millennium](https://steambrew.app/) and [Minimal Dark](https://github.com/SaiyajinK/Minimal-Dark-for-Steam). Keep Minimal Dark installed as `Minimal-Dark-for-Steam`; TrueVision uses its layout and scripts.
+1. Install [Millennium](https://steambrew.app/). TrueVision 2.0 needs no other theme.
 2. Download **TrueVision.zip** from the [latest release](https://github.com/SxGoldenxS/TrueVision-Steam/releases/latest), extract it, and run **INSTALL.cmd**. It backs up an existing copy and preserves your selected profile and settings.
 3. Select **TrueVision** in **Steam > Millennium > Themes**, then fully exit and reopen Steam.
 
@@ -15,7 +15,7 @@ For manual installation, copy the release's whole `Raphael-Ciel` folder into `St
 
 ## Updates
 
-Double-click **UPDATE.cmd** in the extracted package or in your installed `Steam/millennium/themes/Raphael-Ciel` folder. It checks this repository, downloads the exact latest commit over HTTPS, validates the archive and theme identity, backs up the previous copy, then replaces only TrueVision. Your Steam account, active theme and profile settings are preserved. Fully exit and reopen Steam afterward.
+Double-click **UPDATE.cmd** in the extracted package or in your installed `Steam/millennium/themes/Raphael-Ciel` folder. It checks this repository, downloads the exact latest commit over HTTPS, validates the archive and theme identity, backs up the previous copy, then replaces only TrueVision. Your Steam account, active theme and profile settings are preserved. After a successful update, Steam automatically shuts down normally and starts again. An already-current check or failed update does not restart it. If Steam cannot close within 60 seconds, the updater stops and asks you to finish the restart manually; it never force-kills games.
 
 Updates follow this repository's **main** branch. If you are current, the updater exits without reinstalling. There is no background service, scheduled task or polling loop. No GitHub sign-in, Git, Node.js or paid subscription is needed on recipients' PCs. Backups are kept in `Steam/millennium/backups/TrueVision`.
 
@@ -27,4 +27,4 @@ Millennium-compatible GitHub/commit metadata is included too. **Millennium's nat
 
 The repository root is a ready-to-use Millennium theme: `skin.json`, CSS, JavaScript and SVG assets. No build tools are needed to use it. `metadata.json` is installation state, written by Millennium or included in the release; it is intentionally not committed here.
 
-TrueVision is unofficial Tensura fan styling. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md), the included font license, and the profile reference notes. Minimal Dark's original files are not bundled. No AI-generated character artwork is used.
+TrueVision is unofficial Tensura fan styling. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md), the included font license, and the profile reference notes. The former Minimal Dark dependency was removed in 2.0. No AI-generated character artwork is used.

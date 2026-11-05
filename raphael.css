@@ -1,14 +1,14 @@
-/* TrueVision — skill-space surfaces over the installed Minimal Dark layout. */
+/* TrueVision profile colors, artwork and native Steam roles. */
 :root:root {
   --truevision-profile-still: var(--truevision-raphael-still);
   --truevision-profile-animated: var(--truevision-raphael-animated, var(--truevision-raphael-still));
   --raphael-scene: var(--truevision-profile-still);
   --truevision-accent-rgb: 211, 174, 91;
   --truevision-glow-rgb: 106, 229, 205;
-  --truevision-panel-cool: #191d14;
-  --truevision-panel-warm: #1b1914;
-  --truevision-panel-mid: #151710;
-  --truevision-panel-deep: #11140e;
+  --truevision-panel-cool: #1c2522;
+  --truevision-panel-warm: #24261d;
+  --truevision-panel-mid: #17201d;
+  --truevision-panel-deep: #101916;
   --truevision-panel-rgb: 13, 16, 11;
   --truevision-surface-highlight-rgb: 242, 230, 195;
   --truevision-notification-accent: var(--SystemAccentColorLight1);
@@ -20,37 +20,17 @@
   --raphael-panel: rgba(var(--truevision-panel-rgb), .83);
   --raphael-edge: rgba(211, 174, 91, .28);
   --raphael-muted: #b0ab9e;
-  --minimal_dark_color: var(--raphael-gold) !important;
-  --minimal_dark_color_rgb: var(--truevision-accent-rgb);
   --SystemAccentColor: var(--raphael-gold) !important;
   --SystemAccentColor-RGB: var(--truevision-accent-rgb) !important;
-  /* Minimal Dark's WebKit entry uses the Accent aliases, not the desktop ones. */
+  /* Native WebKit accent aliases. */
   --SystemAccentColorAccent: var(--raphael-gold) !important;
   --SystemAccentColorAccent-RGB: var(--truevision-accent-rgb) !important;
-  --minimal_dark_color1: var(--raphael-gold) !important;
-  --minimal_dark_color_rgb1: var(--truevision-accent-rgb);
   --SystemAccentColorLight1: #f2d797 !important;
   --SystemAccentColorLight2: #ffefb8 !important;
   --SystemAccentColorLight3: #fff3d3 !important;
   --SystemAccentColorDark1: #ad863f !important;
   --SystemAccentColorDark2: #705728 !important;
   --SystemAccentColorDark3: #362e20 !important;
-  --minimal_dark_black: #1a1d16;
-  --minimal_dark_blacker: #151810;
-  --minimal_dark_blacker_alt: #10140e;
-  --minimal_dark_blacker_alt1: #0e120c;
-  --minimal_dark_blacker_alt2: #0d100b;
-  --minimal_dark_be_grey: #32352e;
-  --minimal_dark_greyblack: #343a36;
-  --minimal_dark_topgrey: #b0ab9e;
-  --minimal_dark_topgrey1: #d8d0ba;
-  --minimal_dark_less_white: var(--raphael-ivory);
-  --minimal_dark_invisiblegrey: rgba(211, 174, 91, .14);
-  --minimal_dark_installed_games: #e5d7b6;
-  --minimal_dark_currency: var(--raphael-ivory);
-  --minimal_dark_progress_bar: var(--raphael-teal);
-  --minimal_dark_bgb: radial-gradient(circle, var(--SystemAccentColorLight1), var(--raphael-gold));
-  --minimal_dark_corner: 5px;
 }
 
 /* Current Steam controls use semantic accent slots independently of Windows'
@@ -119,7 +99,7 @@ body.DesktopUI .Library .AppDetailsMain .AppDetailsSection .Body {
 body.DesktopUI .Library .AppDetailsMain .AppDetailsSectionContainer {
   box-shadow: inset 0 1px rgba(var(--truevision-surface-highlight-rgb), .045), 0 5px 24px rgba(0, 0, 0, .15);
 }
-/* Stable Steam semantic classes plus installed Minimal Dark's sidebar selector. */
+/* Native Steam sidebar selectors. */
 body.DesktopUI .Library ._3x1HklzyDs4TEjACrRO2tB {
   background: var(--raphael-etch) left top / 192px 192px repeat,
     linear-gradient(160deg, var(--truevision-panel-cool), var(--raphael-ink)) !important;
@@ -201,7 +181,7 @@ body.DesktopUI .DialogDropDown {
   background-color: rgba(var(--truevision-panel-rgb), .88) !important;
   color: var(--raphael-ivory) !important;
 }
-/* Restore keyboard focus removed by the foundation's universal outline rule. */
+/* Visible keyboard focus across native controls. */
 body.DesktopUI :is(button, a, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid var(--raphael-teal) !important;
   outline-offset: 2px !important;
@@ -237,8 +217,6 @@ body.DesktopUI :is(.DialogTextInputBase, .DialogDropDown):focus-within {
   border-color: var(--raphael-teal) !important;
   box-shadow: 0 0 7px rgba(var(--truevision-glow-rgb), .17) !important;
 }
-/* Suppress the inherited moving blurred capsule layer, even during a hot theme switch. */
-.ShowcaseOuter > .minimal-dark-capsule-glow-layer { display: none !important; }
 /* Freeze inactive UI decoration. Native toast entrance/dismissal must still run
    when Steam is unfocused; their canvas has no analytical scene or animation. */
 html[data-truevision-animate="false"] body:not(.DesktopToastContainer) * {

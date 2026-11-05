@@ -13,7 +13,6 @@ try {
  $target=[IO.Path]::GetFullPath((Join-Path $themes 'Raphael-Ciel'))
  if((Split-Path -Parent $target) -ne $themes){throw 'Unexpected theme destination.'}
  if(-not(Test-Path -LiteralPath $themes -PathType Container)){throw 'Install Millennium first: https://steambrew.app/ . Then rerun INSTALL.cmd.'}
- if(-not(Test-Path -LiteralPath (Join-Path $themes 'Minimal-Dark-for-Steam\skin.json'))){throw 'Install Minimal Dark first: https://github.com/SaiyajinK/Minimal-Dark-for-Steam . Keep its folder named Minimal-Dark-for-Steam.'}
  $skin=Get-Content -LiteralPath (Join-Path $source 'skin.json') -Raw|ConvertFrom-Json
  $metadata=Get-Content -LiteralPath (Join-Path $source 'metadata.json') -Raw|ConvertFrom-Json
  if($skin.name -ne 'TrueVision' -or $skin.author -ne 'Golden' -or $skin.github.owner -ne 'SxGoldenxS' -or $skin.github.repo_name -ne 'TrueVision-Steam' -or $metadata.owner -ne $skin.github.owner -or $metadata.repo -ne $skin.github.repo_name -or $metadata.commit -notmatch '^[a-f0-9]{40}$'){throw 'Unexpected theme package or update metadata.'}

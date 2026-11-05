@@ -1,5 +1,6 @@
 /* Asmodeus: independent artwork and surface treatment over shared Steam layout. */
 :root:root:root {
+ --truevision-profile-label: 'LUMINOUS / ASMODEUS';
  --truevision-profile-still: var(--truevision-luminous-still);
  --truevision-profile-animated: var(--truevision-luminous-animated, var(--truevision-luminous-still));
  --raphael-gold: #d46b91;
@@ -11,28 +12,16 @@
  --raphael-muted: #aba0b4;
  --truevision-accent-rgb: 212, 107, 145;
  --truevision-glow-rgb: 179, 161, 199;
- --truevision-panel-cool: #17121e;
- --truevision-panel-warm: #1d111b;
- --truevision-panel-mid: #121018;
- --truevision-panel-deep: #0e0c14;
+ --truevision-panel-cool: #271f30;
+ --truevision-panel-warm: #2d1d2b;
+ --truevision-panel-mid: #201925;
+ --truevision-panel-deep: #15111c;
  --truevision-panel-rgb: 15, 11, 20;
  --truevision-surface-highlight-rgb: 237, 229, 239;
  --truevision-bright: #f6edf5;
  --truevision-selected: #ffe1ed;
  --truevision-text-secondary: #bdb0c4;
  --truevision-notification-accent: #d7bbcF;
- --minimal_dark_topgrey: #aaa0b4;
- --minimal_dark_topgrey1: #d4c9de;
- --minimal_dark_black: #1a1421;
- --minimal_dark_blacker: #16101d;
- --minimal_dark_blacker_alt: #120e19;
- --minimal_dark_blacker_alt1: #100c17;
- --minimal_dark_blacker_alt2: #0e0b13;
- --minimal_dark_be_grey: #37303e;
- --minimal_dark_greyblack: #39323f;
- --minimal_dark_invisiblegrey: rgba(212,107,145,.14);
- --minimal_dark_installed_games: #f6edf5;
- --minimal_dark_corner: 3px;
  --SystemAccentColorLight1: #e3a3be !important;
  --SystemAccentColorLight2: #f6d1e1 !important;
  --SystemAccentColorLight3: #fff0f6 !important;

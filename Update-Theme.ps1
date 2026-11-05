@@ -8,6 +8,8 @@ try {
   if(-not $SteamPath){$SteamPath='C:\Program Files (x86)\Steam'}
  }
  $steamRoot=[IO.Path]::GetFullPath($SteamPath)
+ $steamExe=Join-Path $steamRoot 'steam.exe'
+ if(-not(Test-Path -LiteralPath $steamExe -PathType Leaf)){throw 'Steam executable not found.'}
  $installed=Join-Path $steamRoot 'millennium\themes\Raphael-Ciel'
  if(-not(Test-Path -LiteralPath (Join-Path $installed 'skin.json'))){throw 'Install TrueVision using INSTALL.cmd first.'}
  $identity='SxGoldenxS/TrueVision-Steam'
@@ -58,7 +60,18 @@ try {
  if(-not $?){throw 'Theme installation failed.'}
  $verified=Get-Content -LiteralPath (Join-Path $installed 'metadata.json') -Raw|ConvertFrom-Json
  if($verified.commit -ne $commit){throw 'Installed commit verification failed.'}
- Write-Output "Updated TrueVision to $($skin.version). Fully exit and reopen Steam to apply it."
+ Write-Output "Updated TrueVision to $($skin.version). Restarting Steam..."
+ # Use Steam's normal shutdown so games and pending dialogs can delay or
+ # cancel it. Never force-kill Steam, its helpers or running games.
+ $runningSteam=@(Get-Process -Name steam -ErrorAction SilentlyContinue|Where-Object {$_.Path -eq $steamExe})
+ if($runningSteam.Count){
+  Start-Process -FilePath $steamExe -ArgumentList '-shutdown' -WindowStyle Hidden
+  foreach($process in $runningSteam){
+   if(-not $process.WaitForExit(60000)){throw 'The theme was updated, but Steam did not close within 60 seconds. Close any game or shutdown prompt, then fully restart Steam.'}
+  }
+ }
+ Start-Process -FilePath $steamExe
+ Write-Output 'Steam started with the updated theme.'
 } catch { Write-Error $_; exit 1 }
 finally {
  if($temporary -and (Test-Path -LiteralPath $temporary)){

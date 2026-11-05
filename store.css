@@ -31,6 +31,8 @@
   border-color: var(--raphael-edge) !important;
   backdrop-filter: none !important;
   box-shadow: inset 0 1px rgba(var(--truevision-surface-highlight-rgb), .04) !important;
+  border:1px solid var(--raphael-edge)!important;
+  border-radius:1px!important;
 }
 :root:root body :is(.home_page_content h2, .home_page_content_title,
   .apphub_AppName, .game_area_purchase_game h1, .tab_item_name,

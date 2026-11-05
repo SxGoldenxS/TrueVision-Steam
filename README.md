@@ -15,11 +15,13 @@ For manual installation, copy the release's whole `Raphael-Ciel` folder into `St
 
 ## Updates
 
-After installing an update-enabled release once, use **Steam > Millennium > Updates > Check for updates**, then update **TrueVision** when offered. Keep Millennium's plugin/theme update checking enabled. Fully exit and reopen Steam afterward.
+Double-click **UPDATE.cmd** in the extracted package or in your installed `Steam/millennium/themes/Raphael-Ciel` folder. It checks this repository, downloads the exact latest commit over HTTPS, validates the archive and theme identity, backs up the previous copy, then replaces only TrueVision. Your Steam account, active theme and profile settings are preserved. Fully exit and reopen Steam afterward.
 
-Updates follow this repository's default branch. Publishing a new theme commit makes it available through Millennium's existing update service; checking and applying updates is handled by Millennium. TrueVision adds no background service, scheduled task or polling loop. GitHub/SteamBrew availability and caching can delay update checks.
+Updates follow this repository's **main** branch. If you are current, the updater exits without reinstalling. There is no background service, scheduled task or polling loop. No GitHub sign-in, Git, Node.js or paid subscription is needed on recipients' PCs. Backups are kept in `Steam/millennium/backups/TrueVision`.
 
-Existing recipients need the new release once to enable tracking. Their theme folder remains `Raphael-Ciel`, so saved profile choices stay attached. Local edits to theme files may be overwritten by an update; keep custom copies separately.
+Existing recipients need this new package once to get the updater. Keep `UPDATE.cmd`, `Update-Theme.ps1` and `Install-Theme.ps1` together; the installed theme includes its own copies. Local theme-file edits may be overwritten by an update.
+
+Millennium-compatible GitHub/commit metadata is included too. **Millennium's native update feed currently requires the theme to be listed in SteamBrew's catalog; this repository is not listed there. Use UPDATE.cmd.** Listing it later can enable Millennium's native path without changing the theme ID.
 
 ## Files and credits
 

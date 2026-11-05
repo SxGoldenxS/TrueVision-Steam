@@ -18,6 +18,7 @@
 :root:root body.DesktopUI .SuperNav .MenuButton::after{background:var(--raphael-gold)!important}
 :root:root body.DesktopUI .SuperNav .Selected .MenuButton{color:var(--raphael-ivory)!important;background:rgba(var(--truevision-accent-rgb),.12);border-bottom-color:var(--raphael-gold)}
 :root:root body.DesktopUI .Library{position:relative;background:transparent!important}
+:root:root body.DesktopUI .Library>.URLBarReplacement{display:none!important}
 :root:root body.DesktopUI .Library:has(>.truevision-rail)>.Container{margin-inline-start:var(--truevision-rail-width);width:calc(100% - var(--truevision-rail-width));min-width:0}
 :root:root body.DesktopUI .truevision-rail{
  position:absolute;inset:0 auto 0 0;width:var(--truevision-rail-width);z-index:3;

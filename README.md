@@ -3,7 +3,7 @@
 A standalone tactical Steam interface with four Tensura skill profiles, created by **Golden**.
 For issues or fixes, message **daddysxgold** on Discord.
 
-Choose Raphael / Ciel, Great Sage, Luminous / Asmodeus or Veldora / Lord of Storms in **TrueVision > Configuration > TrueVision > Skill profile**. The tactical rail, squared panels, segmented navigation and game-list status column are shared across all four profiles. Each profile has its own palette, artwork and panel texture across the Library and Store. Installed games remain brighter and heavier than uninstalled games; both have an explicit installation-status column. Background options are Still, Animated and Plain; animation follows window activity and reduced-motion preferences.
+Choose Raphael / Ciel, Great Sage, Luminous / Asmodeus or Veldora / Lord of Storms in **TrueVision > Configuration > TrueVision > Skill profile**. The tactical rail, squared panels, segmented navigation and game-list status column are shared across all four profiles. Each profile has its own palette, artwork and panel texture across the Library and Store. Installed games remain brighter and heavier than uninstalled games; both have an explicit installation-status column. **What's New shelf** is hidden by default; set it to **Shown** in the same configuration tab to restore it. Background options are Still, Animated and Plain; animation follows window activity and reduced-motion preferences.
 
 ## Install
 

@@ -1,7 +1,7 @@
 {
   "name": "TrueVision",
   "author": "Golden",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "github": {
     "owner": "SxGoldenxS",
     "repo_name": "TrueVision-Steam"
@@ -95,6 +95,22 @@
               ".*"
             ],
             "src": "veldora.css"
+          }
+        }
+      }
+    },
+    "What's New shelf": {
+      "tab": "TrueVision",
+      "description": "Show or hide the complete Library home news shelf. Applies to every skill profile.",
+      "default": "Hidden",
+      "values": {
+        "Shown": {},
+        "Hidden": {
+          "TargetCss": {
+            "affects": [
+              "^Steam$"
+            ],
+            "src": "news-hidden.css"
           }
         }
       }

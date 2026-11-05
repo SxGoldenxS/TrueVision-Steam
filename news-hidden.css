@@ -1,0 +1,6 @@
+/* Hide the native news carousel and its otherwise empty wrapper. Game shelves,
+   the library header and the Add shelf control retain their normal layout. */
+:root body.DesktopUI .Library .UpdatesContainer,
+:root body.DesktopUI .Library .AppDetailsMain>.Container>.Body>div:has(>.UpdatesContainer){
+ display:none!important;
+}

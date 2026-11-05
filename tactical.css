@@ -45,15 +45,15 @@
  box-sizing:border-box;border-radius:0!important;
  background:transparent!important;box-shadow:inset 0 -1px rgba(var(--truevision-surface-highlight-rgb),.055);
 }
-:root:root body.DesktopUI .Library .GameListEntryContainer{box-sizing:border-box;width:100%!important;min-width:0;padding-inline-end:78px;position:relative}
+:root:root body.DesktopUI .Library .GameListEntryContainer{box-sizing:border-box;width:100%!important;min-width:0;padding-inline-end:24px;position:relative}
 :root:root body.DesktopUI .Library .GameListEntryContainer>span{flex:1 1 0!important;width:0!important;min-width:0;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
 :root:root body.DesktopUI .Library .GameListEntryContainer>.GameIcon{flex-shrink:0}
 :root:root body.DesktopUI .Library .Installed .GameListEntryContainer::after,
 :root:root body.DesktopUI .Library .Uninstalled .GameListEntryContainer::after{
- content:'INSTALLED';position:absolute;right:8px;top:50%;transform:translateY(-50%);
- font-family:inherit;font-size:8px;line-height:12px;letter-spacing:.4px;color:var(--raphael-teal);pointer-events:none;
+ content:'●';position:absolute;right:8px;top:50%;transform:translateY(-50%);
+ font-family:inherit;font-size:11px;line-height:12px;letter-spacing:0;color:var(--raphael-teal);pointer-events:none;
 }
-:root:root body.DesktopUI .Library .Uninstalled .GameListEntryContainer::after{content:'NOT INSTALLED';color:var(--raphael-muted)}
+:root:root body.DesktopUI .Library .Uninstalled .GameListEntryContainer::after{content:'○';color:var(--raphael-muted)}
 :root:root body.DesktopUI .Library .Installed::after{display:none!important}
 :root:root body.DesktopUI .Library .Installed> .GameListEntryContainer>span{color:var(--truevision-bright)!important;font-weight:600!important}
 :root:root body.DesktopUI .Library .Uninstalled> .GameListEntryContainer>span{color:var(--raphael-muted)!important;font-weight:400!important}

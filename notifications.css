@@ -1,0 +1,136 @@
+/* TrueVision notification cards. Steam owns window sizing, timing and dismissal.
+   Toast canvases must be transparent: the full library scene is not a toast. */
+body.DesktopUI.DesktopToastContainer,
+body.DesktopUI.zXrpABNQHpWKgSzqnGlL {
+  /* Steam allocates 70px for ordinary toasts and 90px for prompts with a footer.
+     The inherited fixed 70px body must not crop the taller native window. */
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flow-root;
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  color: var(--raphael-ivory);
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: calc(100% - 8px) !important;
+  margin: 4px !important;
+  overflow: hidden;
+  background: var(--raphael-etch) left top / 192px 192px repeat,
+    linear-gradient(110deg, var(--truevision-panel-cool), var(--raphael-ink) 80%) !important;
+  border: 1px solid var(--raphael-edge) !important;
+  border-left: 2px solid var(--raphael-gold) !important;
+  border-radius: 5px !important;
+  box-shadow: inset 0 1px rgba(var(--truevision-surface-highlight-rgb), .06), 0 2px 5px rgba(0, 0, 0, .3);
+}
+/* Fine corner traces continue the analytical panel treatment at toast scale. */
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  opacity: .6 !important;
+  background: linear-gradient(var(--truevision-notification-accent), var(--truevision-notification-accent)) right top / 6px 1px no-repeat,
+    linear-gradient(var(--truevision-notification-accent), var(--truevision-notification-accent)) right top / 1px 6px no-repeat,
+    linear-gradient(var(--truevision-notification-accent), var(--truevision-notification-accent)) left bottom / 6px 1px no-repeat !important;
+  pointer-events: none;
+  transition: none !important;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 :is(.DesktopToastTemplate, ._3-H47wPl1Ng3lh7xGZOPIg, ._3V6804k2yutEiF6IWg8axH) {
+  box-sizing: border-box;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 60px;
+  padding: 6px 42px 6px 10px;
+  gap: 10px;
+  color: var(--raphael-ivory);
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 :is(.StandardLogoDimensions, ._1KIwOtwkYQUtRoPyxlh3G-) {
+  width: 38px !important;
+  height: 38px !important;
+  flex-shrink: 0;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 :is(.Content, ._2axKS7MCnzMBRXRcYLn2Is) {
+  flex: 1;
+  min-width: 0;
+  margin-left: 0 !important;
+  overflow: hidden;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 .StandardLogoDimensions :is(.AchievementIconWrapper, img, svg) {
+  box-sizing: border-box;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 :is(.Name, .Title, ._18PwvOcpWfW3M8j2-bEPPJ) {
+  color: var(--truevision-bright) !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 :is(.Desc, .Description, .SubTitle, .StandardNotificationDescription, ._3fUrGm-WHq3qxIpSqRZDgc) {
+  color: var(--truevision-text-secondary) !important;
+  font-size: 11px;
+  line-height: 15px;
+  opacity: 1;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 ._18PwvOcpWfW3M8j2-bEPPJ {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Three-line download cards still fit Steam's 70px window: 44px of text
+   inside the 48px content area, with the same 4px outer safety inset. */
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 .StandardNotificationSubText {
+  color: var(--truevision-text-secondary) !important;
+  font-size: 10px;
+  line-height: 13px;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 ._26rvbcKFCQjLKx-pD7BhvY {
+  flex-shrink: 0;
+  color: var(--raphael-muted) !important;
+  font-size: 9px;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 ._3fUrGm-WHq3qxIpSqRZDgc {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 .BottomBar {
+  box-sizing: border-box;
+  height: 20px;
+  padding: 1px 6px;
+  border-top: 1px solid var(--raphael-edge);
+  background: rgba(0, 0, 0, .16) !important;
+  color: var(--truevision-notification-accent) !important;
+  font-size: 10px;
+  line-height: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Replace only Steam's decorative watermark. Achievement/game art is retained.
+   Use an optimized, transparent copy of the user's existing Rimuru slime icon. */
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 .DesktopToastBackground {
+  position: absolute !important;
+  top: calc(50% - 14px) !important;
+  right: 10px !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 30px !important;
+  height: 28px !important;
+  background: var(--truevision-notification-badge, url("assets/rimuru-slime.png")) center / contain no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  transform: none !important;
+  opacity: .88 !important;
+  pointer-events: none;
+  animation: none !important;
+  transition: none !important;
+}
+body.DesktopUI.DesktopToastContainer .DesktopToastPopup._1OOQPJx0nCNP9ME9toCmV7 .DesktopToastBackground svg {
+  display: none !important;
+}

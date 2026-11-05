@@ -1,0 +1,315 @@
+{
+  "name": "TrueVision",
+  "author": "Golden",
+  "version": "1.8.1",
+  "github": {
+    "owner": "SxGoldenxS",
+    "repo_name": "TrueVision-Steam"
+  },
+  "description": "TrueVision by Golden. Tensura profiles: Raphael/Ciel, Great Sage, Luminous/Asmodeus and Veldora/Lord of Storms. Requires Minimal Dark. For issues, bugs or fixes, message Golden on Discord: daddysxgold.",
+  "tags": [
+    "TrueVision",
+    "Raphael",
+    "Ciel",
+    "Great Sage",
+    "Luminous",
+    "Asmodeus",
+    "Veldora",
+    "Tensura",
+    "Dark"
+  ],
+  "RootColors": "colors.css",
+  "Steam-WebKit": "webkit.css",
+  "Patches": [
+    {
+      "MatchRegexString": "^Account|^Steam$",
+      "TargetCss": "base-option-0.css"
+    },
+    {
+      "MatchRegexString": "^Account|^Steam$",
+      "TargetCss": "base-option-1.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-2.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-3.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-4.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-5.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-6.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-7.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-8.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-9.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-10.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-11.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-12.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-13.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-14.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-15.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-16.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-17.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-18.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-19.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-20.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-21.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-22.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-23.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-24.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-25.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-26.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-27.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-28.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-29.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-30.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-31.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-32.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-33.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-34.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-35.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-36.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-37.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-38.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-39.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-40.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-41.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-42.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-43.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-44.css"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "base-option-45.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-46.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-47.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-48.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-49.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-50.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-51.css"
+    },
+    {
+      "MatchRegexString": ".*",
+      "TargetCss": "base-option-52.css"
+    },
+    {
+      "MatchRegexString": "^Steam$|^OverlayBrowser_Browser$|^SP Overlay:|Supernav$|^notificationtoasts_|^SteamBrowser_Find$|^OverlayTab\\d+_Find$|Menu$|.ModalDialogPopup|.FullModalOverlay",
+      "TargetCss": "libraryroot.custom.css",
+      "TargetJs": "libraryroot.custom.js"
+    },
+    {
+      "MatchRegexString": "^Steam Big Picture Mode$|^QuickAccess_|^MainMenu_",
+      "TargetCss": "bigpicture.custom.css",
+      "TargetJs": "activity.js"
+    },
+    {
+      "MatchRegexString": ".friendsui-container",
+      "TargetCss": "friends.custom.css",
+      "TargetJs": "activity.js"
+    },
+    {
+      "MatchRegexString": "^https://store\\.steampowered\\.com(?:/|$)",
+      "TargetCss": "store.css",
+      "TargetJs": "activity.js"
+    }
+  ],
+  "Conditions": {
+    "Analytical background": {
+      "tab": "TrueVision",
+      "description": "Still is the lightweight default. Animated loads the full moving array only when selected. Reduced motion uses a still array.",
+      "default": "Still",
+      "values": {
+        "Still": {},
+        "Animated": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "animated.css"
+          }
+        },
+        "Plain": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "quiet.css"
+          }
+        }
+      }
+    },
+    "Skill profile": {
+      "tab": "TrueVision",
+      "description": "Raphael / Ciel: gold analytical space. Great Sage: blue ribbons and skill seal. Luminous / Asmodeus: silver/crimson Night Rose. Veldora / Lord of Storms: cyan inscription wheel, prismatic storm and Japanese skill card based on the anime reference.",
+      "default": "Raphael / Ciel",
+      "values": {
+        "Raphael / Ciel": {},
+        "Great Sage (blue)": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "great-sage.css"
+          }
+        },
+        "Luminous / Asmodeus": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "luminous.css"
+          }
+        },
+        "Veldora / Lord of Storms": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "veldora.css"
+          }
+        }
+      }
+    }
+  }
+}

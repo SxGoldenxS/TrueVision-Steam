@@ -1,0 +1,66 @@
+/* TrueVision / pre-evolution Great Sage — ice-blue analytical profile. */
+:root:root:root {
+  --truevision-profile-still: var(--truevision-greatsage-still);
+  --truevision-profile-animated: var(--truevision-greatsage-animated, var(--truevision-greatsage-still));
+  --raphael-gold: #70bcf5;
+  --raphael-ivory: #dcedff;
+  --raphael-teal: #a5e4ff;
+  --raphael-ember: #65baff;
+  --raphael-ink: #080d17;
+  --raphael-edge: rgba(112, 188, 245, .28);
+  --raphael-muted: #9db0c8;
+  --minimal_dark_topgrey: #9db0c8;
+  --minimal_dark_topgrey1: #c6dcf4;
+  --minimal_dark_be_grey: #2a3a50;
+  --minimal_dark_greyblack: #2a374a;
+  --minimal_dark_black: #141c29;
+  --minimal_dark_blacker: #101724;
+  --minimal_dark_blacker_alt: #0c1320;
+  --minimal_dark_blacker_alt1: #0a111d;
+  --minimal_dark_blacker_alt2: #080d17;
+  --minimal_dark_invisiblegrey: rgba(112, 188, 245, .14);
+  --minimal_dark_installed_games: #dcedff;
+  --truevision-text-secondary: #b9cde2;
+  --truevision-accent-rgb: 112, 188, 245;
+  --truevision-glow-rgb: 112, 188, 245;
+  --truevision-panel-cool: #102035;
+  --truevision-panel-warm: #131b2c;
+  --truevision-panel-mid: #11151a;
+  --truevision-panel-deep: #0d131a;
+  --truevision-panel-rgb: 8, 12, 18;
+  --truevision-surface-highlight-rgb: 220, 249, 255;
+  --truevision-notification-accent: var(--raphael-teal);
+  --truevision-bright: #edf7ff;
+  --truevision-selected: #dff4ff;
+  --SystemAccentColorLight1: #a5d7ff !important;
+  --SystemAccentColorLight2: #dff4ff !important;
+  --SystemAccentColorLight3: #edf7ff !important;
+  --SystemAccentColorDark1: #438dcc !important;
+  --SystemAccentColorDark2: #28557f !important;
+  --SystemAccentColorDark3: #172b45 !important;
+  --minimal_dark_corner: 4px;
+}
+/* Keep the spatial manifestation visible, with an opaque reading surface only
+   behind content. No extra backdrop blur or independently animated panels. */
+body.DesktopUI .Library .AppDetailsMain .ScrollContainer {
+  background: linear-gradient(90deg, rgba(5, 13, 25, .48), rgba(5, 13, 25, .08)) !important;
+}
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSectionContainer,
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSection .Body {
+  background: rgba(7, 17, 30, .82) !important;
+  border-radius: 4px !important;
+}
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSectionContainer {
+  box-shadow: inset 0 1px rgba(165, 228, 255, .09), 0 4px 16px rgba(0, 0, 0, .16);
+}
+body.DesktopUI .Library .UpdatesContainer,
+body.DesktopUI .Library .ShowcaseOuter {
+  background: var(--raphael-etch) left top / 192px 192px repeat,
+    radial-gradient(ellipse at 80% 0, rgba(96, 198, 230, .15), transparent 65%),
+    linear-gradient(115deg, #102035, #0d1726 62%, #132638) !important;
+  border-top-color: rgba(165, 228, 255, .2);
+  border-bottom-color: rgba(112, 188, 245, .28);
+  box-shadow: inset 0 1px rgba(213, 248, 255, .035);
+}
+
+:root:root:root { --raphael-etch: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22192%22%20height%3D%22192%22%20viewBox%3D%220%200%20192%20192%22%3E%0A%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%238adfff%22%20stroke-width%3D%22.6%22%20stroke-opacity%3D%22.11%22%3E%0A%20%20%3Cpath%20d%3D%22M-40%20174Q74%20160%20190%20-12M-32%20181Q84%20171%20203%20-10M-14%2028Q111%2055%20211%20160M-20%2033Q113%2062%20205%20169%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M0%20102L192%2046M44%200L109%20192%22%20stroke-opacity%3D%22.055%22%2F%3E%0A%20%3C%2Fg%3E%0A%20%3Cg%20fill%3D%22%23bdefff%22%20fill-opacity%3D%22.045%22%20stroke%3D%22%23bef5ff%22%20stroke-width%3D%22.65%22%20stroke-opacity%3D%22.2%22%3E%0A%20%20%3Cpath%20d%3D%22M25%2048l14%20-3v8l-14%203ZM141%20119l21%205v11l-21%20-5ZM87%20169l9%20-2v5l-9%202Z%22%2F%3E%0A%20%3C%2Fg%3E%0A%20%3Cg%20fill%3D%22%23bcefff%22%20opacity%3D%22.2%22%3E%3Ccircle%20cx%3D%2271%22%20cy%3D%2277%22%20r%3D%22.7%22%2F%3E%3Ccircle%20cx%3D%22170%22%20cy%3D%2239%22%20r%3D%22.6%22%2F%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%22146%22%20r%3D%22.6%22%2F%3E%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A"); }

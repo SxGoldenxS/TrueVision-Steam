@@ -1,0 +1,10 @@
+:root {
+ /* @name Raphael gold */
+ --raphael-gold: #d3ae5b;
+ /* @name Analytical ivory */
+ --raphael-ivory: #f2e6c3;
+ /* @name Ciel cyan */
+ --raphael-teal: #6ae5cd;
+ /* @name Luminous amber */
+ --raphael-ember: #ffa934;
+}

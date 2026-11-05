@@ -1,0 +1,268 @@
+/* TrueVision — skill-space surfaces over the installed Minimal Dark layout. */
+:root:root {
+  --truevision-profile-still: var(--truevision-raphael-still);
+  --truevision-profile-animated: var(--truevision-raphael-animated, var(--truevision-raphael-still));
+  --raphael-scene: var(--truevision-profile-still);
+  --truevision-accent-rgb: 211, 174, 91;
+  --truevision-glow-rgb: 106, 229, 205;
+  --truevision-panel-cool: #191d14;
+  --truevision-panel-warm: #1b1914;
+  --truevision-panel-mid: #151710;
+  --truevision-panel-deep: #11140e;
+  --truevision-panel-rgb: 13, 16, 11;
+  --truevision-surface-highlight-rgb: 242, 230, 195;
+  --truevision-notification-accent: var(--SystemAccentColorLight1);
+  --truevision-bright: #fff3d3;
+  --truevision-selected: #ffefb8;
+  --truevision-text-secondary: #c9c2b1;
+  --truevision-motion-scene: var(--truevision-profile-still);
+  --raphael-ink: #0d100b;
+  --raphael-panel: rgba(var(--truevision-panel-rgb), .83);
+  --raphael-edge: rgba(211, 174, 91, .28);
+  --raphael-muted: #b0ab9e;
+  --minimal_dark_color: var(--raphael-gold) !important;
+  --minimal_dark_color_rgb: var(--truevision-accent-rgb);
+  --SystemAccentColor: var(--raphael-gold) !important;
+  --SystemAccentColor-RGB: var(--truevision-accent-rgb) !important;
+  /* Minimal Dark's WebKit entry uses the Accent aliases, not the desktop ones. */
+  --SystemAccentColorAccent: var(--raphael-gold) !important;
+  --SystemAccentColorAccent-RGB: var(--truevision-accent-rgb) !important;
+  --minimal_dark_color1: var(--raphael-gold) !important;
+  --minimal_dark_color_rgb1: var(--truevision-accent-rgb);
+  --SystemAccentColorLight1: #f2d797 !important;
+  --SystemAccentColorLight2: #ffefb8 !important;
+  --SystemAccentColorLight3: #fff3d3 !important;
+  --SystemAccentColorDark1: #ad863f !important;
+  --SystemAccentColorDark2: #705728 !important;
+  --SystemAccentColorDark3: #362e20 !important;
+  --minimal_dark_black: #1a1d16;
+  --minimal_dark_blacker: #151810;
+  --minimal_dark_blacker_alt: #10140e;
+  --minimal_dark_blacker_alt1: #0e120c;
+  --minimal_dark_blacker_alt2: #0d100b;
+  --minimal_dark_be_grey: #32352e;
+  --minimal_dark_greyblack: #343a36;
+  --minimal_dark_topgrey: #b0ab9e;
+  --minimal_dark_topgrey1: #d8d0ba;
+  --minimal_dark_less_white: var(--raphael-ivory);
+  --minimal_dark_invisiblegrey: rgba(211, 174, 91, .14);
+  --minimal_dark_installed_games: #e5d7b6;
+  --minimal_dark_currency: var(--raphael-ivory);
+  --minimal_dark_progress_bar: var(--raphael-teal);
+  --minimal_dark_bgb: radial-gradient(circle, var(--SystemAccentColorLight1), var(--raphael-gold));
+  --minimal_dark_corner: 5px;
+}
+
+/* Current Steam controls use semantic accent slots independently of Windows'
+   SystemAccentColor. Fill those slots from the selected profile, while leaving
+   red/error and green/friend-presence palettes with their native meanings. */
+:root:root,
+body.DesktopUI [data-accent-color="blue"],
+body.friendsui-container [data-accent-color="blue"] {
+  --color-accent-1: var(--raphael-ink) !important;
+  --color-accent-2: var(--truevision-panel-deep) !important;
+  --color-accent-3: rgba(var(--truevision-accent-rgb), .10) !important;
+  --color-accent-4: rgba(var(--truevision-accent-rgb), .16) !important;
+  --color-accent-5: rgba(var(--truevision-accent-rgb), .24) !important;
+  --color-accent-6: var(--SystemAccentColorDark2) !important;
+  --color-accent-7: var(--SystemAccentColorDark1) !important;
+  --color-accent-8: var(--raphael-gold) !important;
+  --color-accent-9: var(--raphael-gold) !important;
+  --color-accent-10: var(--SystemAccentColorLight1) !important;
+  --color-accent-11: var(--truevision-selected) !important;
+  --color-accent-12: var(--truevision-bright) !important;
+  --color-progress-bar-foreground: var(--raphael-gold) !important;
+}
+body.DesktopUI .ProgressBar {
+  --color-progress-bar-foreground: var(--raphael-gold) !important;
+}
+
+:root:root[data-truevision-animate="true"] {
+  --truevision-motion-scene: var(--truevision-profile-animated);
+}
+body.DesktopUI {
+  background: var(--raphael-ink) var(--raphael-scene) center / cover fixed no-repeat !important;
+  color: var(--raphael-ivory);
+}
+body.DesktopUI .Wrapper,
+body.DesktopUI .AppDetailsTransitionGroup,
+body.DesktopUI .AppDetailsMain,
+body.DesktopUI .AppDetailsMain > .Container,
+body.DesktopUI .LibraryHome,
+body.DesktopUI .Library .Body,
+body.DesktopUI .Library .LibraryHome,
+body.DesktopUI .Library .LibraryHome > div,
+body.DesktopUI .Library .AppDetailsMain .Body {
+  background: transparent !important;
+}
+/* The artwork is already behind the DOM. It cannot receive input or cover controls. */
+body.DesktopUI .Library .AppDetailsMain .ScrollContainer {
+  background: linear-gradient(90deg, rgba(var(--truevision-panel-rgb), .58), rgba(var(--truevision-panel-rgb), .26)) !important;
+}
+body.DesktopUI .Library .AppDetailsOverviewPanel > .Container,
+body.DesktopUI .Library .AppDetailsOverviewPanel .ColumnContainer,
+body.DesktopUI .Library .AppDetailsOverviewPanel .BackdropGlass,
+body.DesktopUI .Library .AppDetailsOverviewPanel .Backdrop {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+/* Keep game artwork as a banner instead of washing the entire analytical canvas in it. */
+body.DesktopUI .Library .ImgBlurBackdrop { opacity: 0 !important; }
+body.DesktopUI .Library .TopCapsule { max-height: 300px; overflow: hidden; }
+body.DesktopUI .Library .HeaderBackgroundImage { max-height: 300px; }
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSectionContainer,
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSection .Body {
+  background: rgba(var(--truevision-panel-rgb), .76) !important;
+  border-color: var(--raphael-edge) !important;
+  border-radius: 5px !important;
+}
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSectionContainer {
+  box-shadow: inset 0 1px rgba(var(--truevision-surface-highlight-rgb), .045), 0 5px 24px rgba(0, 0, 0, .15);
+}
+/* Stable Steam semantic classes plus installed Minimal Dark's sidebar selector. */
+body.DesktopUI .Library ._3x1HklzyDs4TEjACrRO2tB {
+  background: var(--raphael-etch) left top / 192px 192px repeat,
+    linear-gradient(160deg, var(--truevision-panel-cool), var(--raphael-ink)) !important;
+  border-right: 1px solid var(--raphael-edge);
+  box-shadow: inset -1px 0 rgba(var(--truevision-glow-rgb), .035);
+}
+body.DesktopUI .Library ._2-O4ZG0KrnSrzISHBKctFQ {
+  color: var(--truevision-text-secondary);
+  background: transparent;
+}
+body.DesktopUI .Library ._2-O4ZG0KrnSrzISHBKctFQ:hover {
+  color: var(--truevision-bright);
+  background: linear-gradient(90deg, rgba(var(--truevision-accent-rgb), .17), rgba(var(--truevision-accent-rgb), .025)) !important;
+}
+body.DesktopUI .Library ._2-O4ZG0KrnSrzISHBKctFQ.Installed {
+  position: relative;
+  color: var(--truevision-bright) !important;
+}
+body.DesktopUI .Library .Installed > .GameListEntryContainer > span {
+  color: var(--truevision-bright) !important;
+  font-weight: 600 !important;
+}
+body.DesktopUI .Library ._2-O4ZG0KrnSrzISHBKctFQ.Installed::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--raphael-teal);
+  box-shadow: 0 0 5px rgba(var(--truevision-glow-rgb), .35);
+  pointer-events: none;
+}
+body.DesktopUI .Library .Uninstalled > .GameListEntryContainer > span {
+  color: #999c97 !important;
+  font-weight: 400 !important;
+}
+body.DesktopUI .Library ._2-O4ZG0KrnSrzISHBKctFQ.Selected {
+  color: var(--truevision-selected) !important;
+  background: linear-gradient(90deg, rgba(var(--truevision-accent-rgb), .22), rgba(var(--truevision-accent-rgb), .03)) !important;
+  box-shadow: inset 2px 0 var(--raphael-gold);
+}
+body.DesktopUI .Library .Selected > .GameListEntryContainer > span {
+  color: var(--truevision-selected) !important;
+}
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSection {
+  background-color: rgba(var(--truevision-panel-rgb), .55) !important;
+  border-radius: 5px;
+}
+body.DesktopUI .Library .AppDetailsMain .AppDetailsSection .Label,
+body.DesktopUI .Library .AppDetailsMain .GameStatRight {
+  color: var(--raphael-ivory) !important;
+}
+body.DesktopUI .Library .AppDetailsMain .PlayBar.Glassy {
+  background: rgba(var(--truevision-panel-rgb), .88) !important;
+  border-bottom: 1px solid var(--raphael-edge);
+}
+body.DesktopUI .title-area,
+body.DesktopUI .SuperNavBar,
+body.DesktopUI ._3Z7VQ1IMk4E3HsHvrkLNgo,
+body.DesktopUI .SteamDesktopTopBar {
+  background: var(--raphael-etch) left top / 192px 192px repeat,
+    linear-gradient(115deg, var(--truevision-panel-cool), var(--truevision-panel-mid) 58%, var(--truevision-panel-warm)) !important;
+  border-color: var(--raphael-edge) !important;
+}
+body.DesktopUI .DialogContent,
+body.DesktopUI .ModalPosition_Content,
+body.DesktopUI .contextMenuContents,
+body.DesktopUI .MillenniumDesktopSidebar {
+  background: var(--raphael-etch) left top / 192px 192px repeat,
+    radial-gradient(ellipse at 0 0, rgba(var(--truevision-glow-rgb), .07), transparent 65%),
+    linear-gradient(120deg, var(--truevision-panel-cool), var(--truevision-panel-mid) 60%, var(--truevision-panel-warm)) !important;
+  color: var(--raphael-ivory) !important;
+  border-color: var(--raphael-edge) !important;
+}
+body.DesktopUI .DialogTextInputBase,
+body.DesktopUI .DialogDropDown {
+  background-color: rgba(var(--truevision-panel-rgb), .88) !important;
+  color: var(--raphael-ivory) !important;
+}
+/* Restore keyboard focus removed by the foundation's universal outline rule. */
+body.DesktopUI :is(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--raphael-teal) !important;
+  outline-offset: 2px !important;
+}
+body.DesktopUI .GamepadFocus {
+  outline: 2px solid var(--raphael-teal) !important;
+}
+/* Small, state-driven glows: no cursor listeners, animation loop or permanent GPU promotion. */
+body.DesktopUI :is(.DialogButton, button, .SteamButton, .SuperNav .MenuButton, .SuperNav .Arrow.Enabled):not(:disabled):is(:hover, :focus-visible),
+body.DesktopUI .contextMenuItem:is(:hover, .Focused) {
+  border-color: var(--raphael-gold) !important;
+  box-shadow: inset 0 0 8px rgba(var(--truevision-accent-rgb), .12), 0 0 9px rgba(var(--truevision-accent-rgb), .16) !important;
+}
+body.DesktopUI .LibraryItemBox:hover,
+body.DesktopUI .PartnerEventRowCapsule:hover {
+  outline: 1px solid var(--raphael-gold);
+  outline-offset: 1px;
+  box-shadow: 0 0 11px rgba(var(--truevision-accent-rgb), .2) !important;
+}
+/* The news shelf has an independent opaque surface in Steam's home page. */
+body.DesktopUI .Library .UpdatesContainer,
+body.DesktopUI .Library .ShowcaseOuter {
+  background: var(--raphael-etch) left top / 192px 192px repeat,
+    radial-gradient(ellipse at 100% 0, rgba(var(--truevision-accent-rgb), .09), transparent 65%),
+    linear-gradient(115deg, var(--truevision-panel-cool), var(--truevision-panel-mid) 62%, var(--truevision-panel-warm)) !important;
+  border-top: 1px solid rgba(var(--truevision-accent-rgb), .14);
+  border-bottom: 1px solid var(--raphael-edge);
+}
+body.DesktopUI .Library .UpdatesContainer :is(.PageableContainer, .EventRowCarousel) {
+  background-color: transparent !important;
+}
+body.DesktopUI :is(.DialogTextInputBase, .DialogDropDown):focus-within {
+  border-color: var(--raphael-teal) !important;
+  box-shadow: 0 0 7px rgba(var(--truevision-glow-rgb), .17) !important;
+}
+/* Suppress the inherited moving blurred capsule layer, even during a hot theme switch. */
+.ShowcaseOuter > .minimal-dark-capsule-glow-layer { display: none !important; }
+/* Freeze inactive UI decoration. Native toast entrance/dismissal must still run
+   when Steam is unfocused; their canvas has no analytical scene or animation. */
+html[data-truevision-animate="false"] body:not(.DesktopToastContainer) * {
+  animation-play-state: paused !important;
+  transition-duration: 0s !important;
+}
+/* WebKit pages use an understated continuation so store artwork stays legible. */
+body:is(.v6, .responsive_page) {
+  background-color: var(--raphael-ink) !important;
+  color: var(--raphael-ivory);
+}
+body:is(.v6, .responsive_page) #global_header,
+body:is(.v6, .responsive_page) #store_header {
+  background: var(--raphael-etch) left top / 192px 192px repeat, var(--truevision-panel-deep) !important;
+  border-bottom: 1px solid var(--raphael-edge);
+}
+body:is(.v6, .responsive_page) :is(.page_background, .responsive_page_content) {
+  background-color: var(--raphael-ink) !important;
+}
+body.friendsui-container {
+  background-color: var(--raphael-ink) !important;
+  color: var(--raphael-ivory);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root:root:root:root { --truevision-profile-animated: var(--truevision-profile-still) !important; }
+  body.DesktopUI * { scroll-behavior: auto !important; }
+}

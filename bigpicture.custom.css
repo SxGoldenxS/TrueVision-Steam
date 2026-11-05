@@ -1,0 +1,6 @@
+/* Minimal Dark remains an installed local dependency. */
+@import url("https://millennium.host/v1/themes/Minimal-Dark-for-Steam/bigpicture.custom.css");
+@import url("colors.css");
+@import url("scene.css");
+@import url("raphael.css");
+@import url("notifications.css");

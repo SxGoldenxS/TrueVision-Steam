@@ -1,0 +1,79 @@
+/* The Store is an independent WebKit document. Reuse the selected skill's
+   scene, palette and etching; never put decorative layers over game controls. */
+:root:root body {
+  background: linear-gradient(rgba(var(--truevision-panel-rgb), .72), rgba(var(--truevision-panel-rgb), .86)) fixed,
+    var(--raphael-ink) var(--raphael-scene) center top / cover fixed no-repeat !important;
+  color: var(--raphael-ivory);
+}
+:root:root body :is(.responsive_page_content, .home_page_body_ctn, .home_ctn, .page_background, .game_page_background, #StoreTemplate) {
+  background: transparent !important;
+}
+/* Retain promotional capsules, trailers and their links. Clear only the
+   ordinary page containers that otherwise conceal the skill backdrop. */
+:root:root body :is(#global_header, #global_header > .content, #store_header,
+  .store_nav_bg, .uKlZfaGB3Rs-, #footer, #footer_spacer) {
+  background: var(--raphael-etch) left top / 224px 180px repeat,
+    linear-gradient(115deg, var(--truevision-panel-cool), var(--truevision-panel-deep)) !important;
+  border-color: var(--raphael-edge) !important;
+  backdrop-filter: none !important;
+}
+:root:root body :is(.store_nav_bg, .uKlZfaGB3Rs-) {
+  box-shadow: inset 0 -1px var(--raphael-edge), 0 3px 12px rgba(0,0,0,.2) !important;
+}
+/* Classic Store home, app pages and search share these semantic surfaces. */
+:root:root body :is(.home_pagecontent_ctn .ctn_background, .hero_data,
+  .tab_content, .tab_preview_container, .store_capsule .discount_block,
+  .game_area_purchase_game, .game_area_offsite_purchase, .game_area_dlc_section,
+  .game_details, .game_area_details_specs, .review_box, .search_result_row,
+  .search_collapse_block, .search_rightcol .block, .popup_block_new .popup_body) {
+  background: var(--raphael-etch) left top / 224px 180px repeat,
+    linear-gradient(120deg, var(--truevision-panel-cool), var(--truevision-panel-mid) 65%, var(--truevision-panel-warm)) !important;
+  border-color: var(--raphael-edge) !important;
+  backdrop-filter: none !important;
+  box-shadow: inset 0 1px rgba(var(--truevision-surface-highlight-rgb), .04) !important;
+}
+:root:root body :is(.home_page_content h2, .home_page_content_title,
+  .apphub_AppName, .game_area_purchase_game h1, .tab_item_name,
+  .search_result_row .title, .page_title_area .pageheader) {
+  color: var(--raphael-ivory) !important;
+}
+:root:root body :is(.store_nav .tab, .store_nav .tab > span,
+  .popup_menu .popup_menu_item, .gutter_header, .gutter_header a,
+  .game_description_snippet, .tab_item_details) {
+  color: var(--truevision-text-secondary) !important;
+}
+:root:root body :is(.store_nav .tab, .popup_menu .popup_menu_item,
+  .tab_item, .search_result_row):is(:hover, :focus-visible, .focus, .active) {
+  background: linear-gradient(90deg, rgba(var(--truevision-accent-rgb), .22), var(--truevision-panel-deep)) !important;
+  color: var(--truevision-bright) !important;
+  border-color: var(--raphael-gold) !important;
+}
+:root:root body :is(.store_nav .tab:hover > span, .gutter_item:hover,
+  .game_area_details_specs a, .app_tag, .pulldown_desktop) {
+  color: var(--raphael-gold) !important;
+}
+:root:root body :is(.searchbox, #store_nav_search_term, #term,
+  .searchbar, input[type="search"], input[type="text"]) {
+  background: var(--truevision-panel-deep) !important;
+  color: var(--raphael-ivory) !important;
+  border-color: var(--raphael-edge) !important;
+}
+/* Keep Steam's green purchase/discount and red warning roles intact. */
+:root:root body :is(.btnv6_blue_hoverfade, .btnv6_blue_blue_innerfade,
+  .btnv6_white_transparent):not(.btn_green_white_innerfade) {
+  background: var(--truevision-panel-cool) !important;
+  color: var(--raphael-ivory) !important;
+  border-color: var(--raphael-edge) !important;
+}
+:root:root body :is(.btnv6_blue_hoverfade, .btnv6_blue_blue_innerfade,
+  .btnv6_white_transparent) > span {
+  background: transparent !important;
+  color: inherit !important;
+}
+:root:root body :is(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--raphael-teal) !important;
+  outline-offset: 2px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root:root body { background-attachment: scroll !important; }
+}

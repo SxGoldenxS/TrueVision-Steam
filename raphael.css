@@ -88,7 +88,9 @@ body.DesktopUI .Library .AppDetailsOverviewPanel .Backdrop {
 }
 /* Keep game artwork as a banner instead of washing the entire analytical canvas in it. */
 body.DesktopUI .Library .ImgBlurBackdrop { opacity: 0 !important; }
-body.DesktopUI .Library .TopCapsule { max-height: 300px; overflow: hidden; }
+/* Keep Steam's overflow:visible: clipping here flattens preserve-3d, so its
+   translateZ(-1px) scale(2) parallax renders the hero at double size. */
+body.DesktopUI .Library .TopCapsule { max-height: 300px; }
 body.DesktopUI .Library .HeaderBackgroundImage { max-height: 300px; }
 body.DesktopUI .Library .AppDetailsMain .AppDetailsSectionContainer,
 body.DesktopUI .Library .AppDetailsMain .AppDetailsSection .Body {
